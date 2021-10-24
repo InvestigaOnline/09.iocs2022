@@ -1,0 +1,36 @@
+name: "Comparativa Tendam / Inditex - Caso 2022"
+navbar:
+  title: "Caso 2022"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Preliminares"
+      menu:
+      - text: "Análisis"
+        href: analisis.html
+      - text: "Ficha"
+        href: ficha.html
+      - text: "Perfil"
+        href: perfil.html
+      - text: "Objetivos"
+        href: o.html
+    - text: "Resultados"
+      menu:
+      - text: "1"
+        href: 1.html
+    - text: "Conclusiones"
+      href: conclusiones.html
+  right:
+    - text: "Acerca de ..."
+      icon: fa-question-circle
+      href: about.html
+    - text: "InvestigaOnline.com"
+      icon: fa-search-plus
+      href: "https://www.investigaonline.com"
+output:
+  html_document:
+    theme: paper
+    includes:
+      in_header: header.html
+      after_body: footer.html
+    css: 'style.css'

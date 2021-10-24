@@ -1,0 +1,14 @@
+---
+title: 'Caso 2022'
+subtitle: 'InvestigaOnline'
+author: 'Roberto Gil-Saura'
+date: 'Última actualización en `r Sys.Date()`'
+---
+
+# Introducción
+
+>  Documento redactado con fines académicos, en desarrollo y no revisado.
+
+NOTA DEL AUTOR: 
+
+> **_El presente texto fue redactado con el ánimo de realizar un análisis de situación de tema de trabajado seleccionado para este año. _**

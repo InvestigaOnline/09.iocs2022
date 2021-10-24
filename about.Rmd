@@ -1,0 +1,47 @@
+---
+title: 'Acerca de ...'
+---
+
+```{r echo = TRUE}
+knitr::opts_chunk$set(echo = TRUE, comment = NA)
+```
+
+
+```{r echo = TRUE}
+suppressMessages(library(dplyr,quietly =TRUE))
+suppressMessages(library(stringr,quietly =TRUE))
+suppressMessages(library(expss,quietly =TRUE))
+suppressMessages(library(highcharter,quietly =TRUE))
+suppressMessages(library(kableExtra,quietly =TRUE))
+suppressMessages(library(psych,quietly =TRUE))
+suppressMessages(library(wordcloud,quietly =TRUE))
+suppressMessages(library(readr,quietly =TRUE))
+
+set.seed(311265)
+
+data.total <- suppressMessages(read_spss('~/R/r-projects/09.iocs2022/Datos_IOCS2022.sav'))
+data.total <- filter(data.total, DURACION > 0)
+data <- data.total %>%  where(ESTADO == 1)
+participantes <- nrow(data.total)
+nointer <- nrow(data.total %>%  where(DURACION == 0))
+parciales <- nrow(data.total %>%  where(!ESTADO == 1 & DURACION > 0 ))
+finalizadas <- nrow(data.total %>%  where(ESTADO == 1))
+respuesta <- (finalizadas / participantes) * 100
+col_stops <-data.frame(q = c(0.25, 0.50, 0.75),c = c('#CD5C5C', '#F0E68C', '#3CB371'),stringsAsFactors = FALSE)
+stops <- list_parse2(col_stops)
+options(highcharter.theme = hc_theme_economist(tooltip = list(valueDecimals = 1)))
+```
+
+
+# ¿Quiénes somos?
+
+<span style="class= 'centrado' width: 100%; ">![](https://drive.google.com/uc?export=view&id=1RuRVvr4CNzrJZrXlOWBmzPuTUaS-vir1)</span>
+
+InvestigaOnline.com desarrolla junto a sus clientes, los más nuevos y avanzados métodos de investigación científica.
+En InvestigaOnline.com, somos conscientes del tremendo impacto que la tecnología y la globalización de la recolección de la información tienen dentro de la empresa, es por eso que desarrollamos nuestra actividad guiado por esos dos conceptos. 
+
+Ahora, también la llevamos a nuestra especialidad: el análisis de datos.
+
+La más novedosa tecnología en el medio más global, ofreciendo servicios de proceso de datos, desarrollo de aplicaciones y estudios de mercado, siempre de forma online.
+
+<span style="class= 'centrado' width: 100%; ">![](https://drive.google.com/uc?export=view&id=1-NGpmcgSgqDHSR6k41JWnXfwB35u7Tgy)</span>

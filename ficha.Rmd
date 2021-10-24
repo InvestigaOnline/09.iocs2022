@@ -1,0 +1,45 @@
+---
+title: 'Ficha técnica del estudio'
+---
+
+# Introducción
+La encuesta fue administrada de forma online. Para ello se utilizó el softwware [Gandia Integra](https://www.tesigandia.com/gandia-integra/) de la empesa [TESI](https://www.tesigandia.com), realizándose el proceso de datos con el [software R](https://www.r-project.org/).
+
+# Ficha técnica
+
+El enlace fue visitado por `r participantes`, de los que `r parciales` iniciaron la entrevista no acabando la misma, y por tanto, hubo `r finalizadas` participantes que la consiguieron acabar. Hay un ratio de respuesta de `r round(respuesta,1)` %. 
+```{r echo = TRUE}
+ficha <-
+    data.frame (
+     dato = c(
+       'Universo',
+       'Ámbito',
+       'Método',
+       'Herramienta',
+       'Administración',
+       'Muestreo',
+       'Parámetros',
+       'Muestra',
+       'Trabajo de campo',
+       'Software de recogida',
+       'Software de análisis',
+       'Tasa de respuesta',
+       'Trabajo desarrollado con fines académicos'),
+     descripción = c(
+       'Residentes en España, hombres y mujeres de 16 años en adelante',
+       'Nacional, España',
+       'Encuesta cuantitativa con enfoque exploratorio',
+       'Cuestionario estructurado',
+       'CAWI',
+       'No probabilístico, conveniencia',
+       'Si el muestreo hubiera sido probabilístico y aleatorio, el margen de confianza hubiera sido de 95,45% y el error del 4% en un supuesto de máxima indeterminación [p=q=50%]',
+       paste('Diseñada: XXX <br>Ola 1 - Efectiva:',finalizadas, sep=' '),
+       'Fase de test: Octubre - Noviembre 2021' ,
+       '<a href="https://www.tesigandia.com/gandia-integra/">Integra</a>, un producto de <a href="https://www.tesigandia.com">TESI, SL</a>',
+       'R, por <a href="https://www.investigaonline.com">InvestigaOnline.com</a>',
+       paste(round(respuesta,1), ' %', sep= ''),
+       'InvestigaOnline.com')
+     )
+kbl(ficha, escape=FALSE) %>% 
+     kable_styling(bootstrap_options = c("striped", "hover", 'condensed'), full_width = F)
+```
