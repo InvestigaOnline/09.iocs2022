@@ -1,6 +1,7 @@
 # 09.iocs2022
  Caso 2022
-Máster
+
+Usado en:
 - PMK UCV 2021-2022
 - MBA 2021-2022
 - MIM 2021-2022
