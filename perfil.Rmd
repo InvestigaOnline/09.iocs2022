@@ -64,3 +64,31 @@ highchart() %>%
     hc_exporting(enabled=TRUE)
 ```
 
+
+La distribución por grupos empresariales (Tendam o Inditex):
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells(R1D) %>%
+	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cases(label='casos') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Perfil:','Grupo', sep = ''))
+as.datatable_widget(tab)
+```
+
+```{r echo = FALSE}
+df <- data %>%
+	tab_cells('|'=unvr(R3)) %>%
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns')
+colnames(df) <- c('name','y')
+highchart() %>%
+    hc_title(text = 'Grupo de calificación') %>% 
+    hc_subtitle(text = 'TENDAM / INDITEX') %>% 
+    hc_chart(type = 'pie', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "Grupo", showInLegend = TRUE, innerSize='75%' )%>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
