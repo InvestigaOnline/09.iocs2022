@@ -1,0 +1,39 @@
+---
+title: 'Conclusiones del estudio'
+---
+
+# Generales
+
+Tras analizar los resultados alcanzados, exponemos las siguientes conclusiones:
+
+* ...
+* ...
+
+## Objetivo 1
+
+* ...
+* ...
+
+## Objetivo 2
+
+* ...
+* ...
+
+## Objetivo 3
+
+* ...
+* ...
+
+## Objetivo 4
+
+* ...
+* ...
+
+# Recomendaciones
+
+Por último, quepan estas recomendaciones de acción a las empresas que afrontarán 
+
+* ...
+* ...
+
+---

@@ -1,6 +1,6 @@
 name: "Comparativa Tendam / Inditex - Caso 2022"
 navbar:
-  title: "Caso 2022"
+  title: "TENDAM / INDITEX"
   left:
     - text: "Home"
       href: index.html
