@@ -8,7 +8,7 @@ La encuesta fue administrada de forma online. Para ello se utilizó el softwware
 # Ficha técnica
 
 El enlace fue visitado por `r participantes`, de los que `r parciales` iniciaron la entrevista no acabando la misma, y por tanto, hubo `r finalizadas` participantes que la consiguieron acabar. Hay un ratio de respuesta de `r round(respuesta,1)` %. 
-```{r echo = TRUE}
+```{r echo = FALSE}
 ficha <-
     data.frame (
      dato = c(

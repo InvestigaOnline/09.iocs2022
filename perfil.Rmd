@@ -1,0 +1,66 @@
+---
+title: 'Perfil del target'
+---
+
+# Descripción de la muestra
+
+Muestra ha sido obtenida por medio de grupos de whatsapp (conocidos y familiares de alumnos) por lo que el muestreo de conveniencia ha sido el método indicado. Ello nos lleva a una muestra sesgada de individuos, no representativos de la estructura poblacional del universo señalado en la [ficha técnica](https://caso2022.investigaonline.com/ficha.html).
+
+
+La distribución por edades de los entrevistados ha sido la siguiente:
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells(R3) %>%
+	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cases(label='casos') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Perfil:','Edad', sep = ''))
+as.datatable_widget(tab)
+```
+
+```{r echo = FALSE}
+df <- data %>%
+	tab_cells('|'=unvr(R3)) %>%
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns')
+colnames(df) <- c('name','y')
+highchart() %>%
+    hc_title(text = 'Edad de los entrevistados') %>% 
+    hc_subtitle(text = 'Tramos de Edad') %>% 
+    hc_chart(type = 'pie', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "Edad", showInLegend = TRUE, innerSize='75%' )%>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+
+Mientras que la distribución por sexos ha sido:
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells(R2) %>%
+	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cases(label='casos') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Perfil:','SEXO', sep = ''))
+as.datatable_widget(tab)
+```
+
+```{r echo = FALSE}
+df <- data %>%
+	tab_cells('|'=unvr(R2)) %>%
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns')
+colnames(df) <- c('name','y')
+highchart() %>%
+    hc_title(text = 'Sexo de los entrevistados') %>% 
+    hc_subtitle(text = '') %>% 
+    hc_chart(type = 'pie', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "Sexo", showInLegend = TRUE, innerSize='75%' )%>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+

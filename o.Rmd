@@ -1,0 +1,36 @@
+---
+title: 'Objetivos y necesidades de información'
+---
+
+# Descripción del problema de investigación
+
+A completar ...
+
+# Resumen de objetivos y necesidades de información
+
+Para poder alcanzar estos objetivos y tras una reflexión profunda, creemos preciso alcanzar las siguientes necesidades de información que aquí listamos brevemente.
+
+1. TIENDA ONLINE
+    1. SATISFACCIÓN GLOBAL
+    1. RECOMENDACIÓN
+    1. LIKES VALORACIÓN POSITIVA
+    1. LIKES VALORACIÓN NEGATIVA
+    1. PROBABILIDAD DE RECOMPRA
+    1. VALORACIÓN OBJETIVA DEL SERVICIO RECIBIDO EN ÚLTIMA TRANSACCIÓN
+    1. VALORACIÓN ATRIBUTOS GENERALES DE TIENDA ONLINE
+    1. VALORAR ATENCIÓN AL CLIENTE ONLINE
+    1. VALORAR EL PROCESO DE PAGO
+    1. VALORAR ENTREGA ENVÍO
+    1. VALORAR EL PRODUCTO EN LA TIENDA
+2. TIENDA FÍSICA
+    1. SATISFACCIÓN GLOBAL 
+    1. RECOMENDACIÓN
+    1. LIKES VALORACIÓN POSITIVA
+    1. LIKES VALORACIÓN NEGATIVA
+    1. PROBABILIDAD DE RECOMPRA
+    1. VALORACIÓN OBJETIVA DEL SERVICIO RECIBIDO EN ÚLTIMA TRANSACCIÓN
+    1. VALORACIÓN ATRIBUTOS GENERALES DE TIENDA FÍSICA
+    1. VALORAR ATENCIÓN AL CLIENTE FÍSICA
+    1. VALORAR EL PROCESO DE PAGO
+    1. VALORAR  ENTREGA CAJA
+    1. VALORAR EL PRODUCTO EN LA TIENDA
