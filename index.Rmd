@@ -11,4 +11,4 @@ date: 'Última actualización en `r Sys.Date()`'
 
 NOTA DEL AUTOR: 
 
-> **_El presente texto fue redactado con el ánimo de realizar un análisis de situación de tema de trabajado seleccionado para este año. _**
+> **_El presente informe refleja la situación real del caso en la última fecha de actualización. _**
