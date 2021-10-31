@@ -1,0 +1,79 @@
+---
+title: "Resultados (01)"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+El primer objetivo estaba relacionado con la satisfacción declarada con el proceso de compra. Primera pregunta del instrumento de medición, tras el _screening_ tratando de eliminar sesgo que el propio instrumento de medición pudiera introducir al ser administrado. La medición del objeto *satisfacción* se realiza con una escala de 0 a 10, donde el 0 era muy insatisfecho y el 10 muy satisfecho.
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells(P1) %>%
+	tab_stat_cpct(label='%casos') %>%
+    tab_cells(P1) %>%
+    tab_stat_cases(label='casos') %>%
+    tab_last_hstack() %>%
+    tab_cells(na_if(P1, gt(10))) %>%
+    tab_stat_mean(label='Media de casos') %>%
+    tab_pivot() %>%
+    tab_caption('Nivel de satisfacción con el proceso de compra')
+as.datatable_widget(tab)
+```
+
+Si analizamos el KPI derivado ...
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells(KPIP1) %>%
+	tab_stat_cpct(label='%casos') %>%
+    tab_cells(KPIP1) %>%
+    tab_stat_cases(label='casos') %>%
+    tab_last_hstack() %>%
+    tab_cells(KPIP1) %>%
+    tab_stat_mean(label='KPI-P1') %>%
+    tab_last_hstack() %>%
+	tab_pivot() %>%
+    tab_caption('Índice de satisfacción con el proceso de compra')
+as.datatable_widget(tab)
+```
+
+```{r echo = FALSE}
+df <- data %>%
+	tab_cells('|'=unvr(KPIP1)) %>%
+	tab_stat_cpct(label='% casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns')
+colnames(df) <- c('name','y')
+df$y <- round(df$y,1)
+highchart() %>%
+    hc_title(text = 'Índice de satisfacción con el proceso de compra') %>% 
+    hc_subtitle(text = 'KPI-P1') %>% 
+    hc_chart(type = 'pie', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "Valor", showInLegend = FALSE, innerSize='75%',dataLabels = list(format="{point.name}<br>({point.y}%)"))%>%
+    hc_tooltip(useHTML = TRUE,style = list(fontSize = "30px"),headerFormat = "",pointFormat = paste("<br><div style='text-align: center;'>Índice <b><br>",round(mean(data$KPIP1, na.rm = TRUE), 1),"</div>"),
+               positioner = JS(
+                  "function () {
+                    xp =  this.chart.chartWidth/2 - this.label.width/2
+                    yp =  this.chart.chartHeight/2 - this.label.height/2
+                    return { x: xp, y: yp };
+                  }")
+               ,shadow = FALSE,borderWidth = 0,backgroundColor = "transparent",hideDelay = 9999) %>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+Si distribuimos la satisfacción por sexo / edad / canal /grupo los resultados con los siguientes:
+
+```{r echo = FALSE}
+tab <- data %>%
+    tab_cols(total(),R2, R3REC, R1C, R1D) %>%
+    tab_cells(na_if(P1, gt(10))) %>%
+    tab_stat_mean_sd_n() %>%
+    tab_last_sig_means() %>%
+	tab_pivot() %>%
+    t() %>%
+    tab_caption('Perfil * Nivel de satisfacción con el proceso de compra')
+as.datatable_widget(tab)
+```

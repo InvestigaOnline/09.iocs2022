@@ -7,27 +7,30 @@ body {
 }
 
 h1 {
-  color: cadetblue;
+  color: #767676;
   text-align: left;
   font-size: 1.5em;
   font-weight: bold;
+  font-family: Montserrat !important ;
 }
 
 h2 {
-  color: darksalmon;
+  color: #E10033;
   font-weight: bold;
   text-align: left;
   font-size: 1.4em;
+  font-family: Montserrat !important ;
 }
 
 
 h3 {
   text-align: left;
   font-size: 1.3em;
+  font-family: Montserrat !important ;
 }
 
 p {
-  font-family: Roboto;
+  font-family: Montserrat !important ;
   font-size: 1.1em;
 }
 

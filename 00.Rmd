@@ -3,12 +3,13 @@ title: 'Acerca de ...'
 ---
 
 ```{r echo = TRUE}
-knitr::opts_chunk$set(echo = TRUE, comment = NA)
+knitr::opts_chunk$set(echo = FALSE, comment = NA)
 ```
 
 
 ```{r echo = TRUE}
 suppressMessages(library(dplyr,quietly =TRUE))
+suppressMessages(library(tidyr,quietly =TRUE))
 suppressMessages(library(stringr,quietly =TRUE))
 suppressMessages(library(expss,quietly =TRUE))
 suppressMessages(library(highcharter,quietly =TRUE))
@@ -16,6 +17,7 @@ suppressMessages(library(kableExtra,quietly =TRUE))
 suppressMessages(library(psych,quietly =TRUE))
 suppressMessages(library(wordcloud,quietly =TRUE))
 suppressMessages(library(readr,quietly =TRUE))
+
 
 set.seed(311265)
 
@@ -29,7 +31,7 @@ finalizadas <- nrow(data.total %>%  where(ESTADO == 1))
 respuesta <- (finalizadas / participantes) * 100
 col_stops <-data.frame(q = c(0.25, 0.50, 0.75),c = c('#CD5C5C', '#F0E68C', '#3CB371'),stringsAsFactors = FALSE)
 stops <- list_parse2(col_stops)
-options(highcharter.theme = hc_theme_economist(tooltip = list(valueDecimals = 1)))
+options(highcharter.theme = hc_theme_bloom(tooltip = list(valueDecimals = 1)))
 ```
 
 

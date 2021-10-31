@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Resultados (01)</title>
+
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.19/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<script src="site_libs/proj4js-2.3.15/proj4.js"></script>
+<link href="site_libs/highcharts-8.1.2/css/motion.css" rel="stylesheet" />
+<script src="site_libs/highcharts-8.1.2/highcharts.js"></script>
+<script src="site_libs/highcharts-8.1.2/highcharts-3d.js"></script>
+<script src="site_libs/highcharts-8.1.2/highcharts-more.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/stock.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/map.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/annotations.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/data.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/drilldown.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/item-series.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/offline-exporting.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/overlapping-datalabels.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/exporting.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/export-data.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/funnel.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/heatmap.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/treemap.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/sankey.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/dependency-wheel.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/organization.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/solid-gauge.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/streamgraph.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/sunburst.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/vector.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/wordcloud.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/xrange.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/tilemap.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/venn.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/gantt.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/timeline.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/parallel-coordinates.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/bullet.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/coloraxis.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/dumbbell.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/lollipop.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/series-label.js"></script>
+<script src="site_libs/highcharts-8.1.2/plugins/motion.js"></script>
+<script src="site_libs/highcharts-8.1.2/custom/reset.js"></script>
+<script src="site_libs/highcharts-8.1.2/modules/boost.js"></script>
+<script src="site_libs/highchart-binding-0.8.2/highchart.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<!DOCTYPE html>
+<head><link rel="shortcut icon" href="https://drive.google.com/uc?export=view&id=1JbeH3BFMq-xjBIroa3lcnqhOJS4Ap-RB">&nbsp;</head>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">TENDAM / INDITEX</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Preliminares
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="caso.html">Caso</a>
+    </li>
+    <li>
+      <a href="ficha.html">Ficha</a>
+    </li>
+    <li>
+      <a href="perfil.html">Perfil</a>
+    </li>
+    <li>
+      <a href="o.html">Objetivos</a>
+    </li>
+    <li>
+      <a href="qst.html">Cuestionario</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resultados
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="01.html">Objetivo 01</a>
+    </li>
+    <li>
+      <a href="02.html">Objetivo 02</a>
+    </li>
+    <li>
+      <a href="03.html">Objetivo 03</a>
+    </li>
+    <li>
+      <a href="04.html">Objetivo 04</a>
+    </li>
+    <li>
+      <a href="05.html">Objetivo 05</a>
+    </li>
+    <li>
+      <a href="06.html">Objetivo 06</a>
+    </li>
+    <li>
+      <a href="07.html">Objetivo 07</a>
+    </li>
+    <li>
+      <a href="Objetivo 08.html">Objetivo 08</a>
+    </li>
+    <li>
+      <a href="09.html">Objetivo 09</a>
+    </li>
+    <li>
+      <a href="10.html">Objetivo 10</a>
+    </li>
+    <li>
+      <a href="11.html">Objetivo 11</a>
+    </li>
+    <li>
+      <a href="12.html">Otros análisis</a>
+    </li>
+    <li>
+      <a href="conclusiones.html">Conclusiones</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="00.html">
+    <span class="fa fa-question-circle"></span>
+     
+    Acerca de ...
+  </a>
+</li>
+<li>
+  <a href="https://www.investigaonline.com">
+    <span class="fa fa-search-plus"></span>
+     
+    InvestigaOnline.com
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Resultados (01)</h1>
+
+</div>
+
+
+<p>El primer objetivo estaba relacionado con la satisfacción declarada con el proceso de compra. Primera pregunta del instrumento de medición, tras el <em>screening</em> tratando de eliminar sesgo que el propio instrumento de medición pudiera introducir al ser administrado. La medición del objeto <em>satisfacción</em> se realiza con una escala de 0 a 10, donde el 0 era muy insatisfecho y el 10 muy satisfecho.</p>
+<div id="htmlwidget-c7857a6c4b3140a197cb" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c7857a6c4b3140a197cb">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","caption":"<caption>Nivel de satisfacción con el proceso de compra<\/caption>","data":[["Satisfacción global","","","","","","","","","","","",""],["0","1","2","3","4","5","6","7","8","9","10","#Total cases","Media de casos"],[null,null,null,null,4,null,8,16,36,24,12,25,null],[null,null,null,null,1,null,2,4,9,6,3,25,null],[null,null,null,null,null,null,null,null,null,null,null,null,8]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        %casos\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        casos\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<p>Si analizamos el KPI derivado …</p>
+<div id="htmlwidget-9c6821817451c7bbefbe" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9c6821817451c7bbefbe">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","caption":"<caption>Índice de satisfacción con el proceso de compra<\/caption>","data":[["Índice de satisfacción global","","","",""],["Insatisfechos","Neutrales","Satisfechos","#Total cases",""],[12,52,36,25,null],[3,13,9,25,null],[null,null,null,null,24]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        %casos\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        casos\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        KPI-P1\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-6a5a0f6cc1989456e245" style="width:100%;height:500px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6a5a0f6cc1989456e245">{"x":{"hc_opts":{"chart":{"reflow":true,"type":"pie","polar":false,"inverted":false},"title":{"text":"Índice de satisfacción con el proceso de compra"},"yAxis":{"title":{"text":null}},"credits":{"enabled":true,"text":"InvestigaOnline.com","href":"https://www.investigaonline.com"},"exporting":{"enabled":true},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"}},"subtitle":{"text":"KPI-P1"},"xAxis":{"categories":["Insatisfechos","Neutrales","Satisfechos"]},"series":[{"data":[{"name":"Insatisfechos","y":12},{"name":"Neutrales","y":52},{"name":"Satisfechos","y":36}],"type":null,"name":"Valor","showInLegend":false,"innerSize":"75%","dataLabels":{"format":"{point.name}<br>({point.y}%)"}}],"tooltip":{"useHTML":true,"style":{"fontSize":"30px"},"headerFormat":"","pointFormat":"<br><div style='text-align: center;'>Índice <b><br> 24 <\/div>","positioner":"function () {\n                    xp =  this.chart.chartWidth/2 - this.label.width/2\n                    yp =  this.chart.chartHeight/2 - this.label.height/2\n                    return { x: xp, y: yp };\n                  }","shadow":false,"borderWidth":0,"backgroundColor":"transparent","hideDelay":9999}},"theme":{"colors":["#E10033","#000000","#767676","#E4E4E4"],"chart":{"backgroundColor":"#FFFFFF","style":{"fontFamily":"Roboto","color":"#000000"}},"title":{"align":"left","style":{"fontFamily":"Roboto","color":"#000000","fontWeight":"bold"}},"subtitle":{"align":"left","style":{"fontFamily":"Roboto","color":"#000000","fontWeight":"bold"}},"xAxis":{"lineColor":"#000000","lineWidth":2,"tickColor":"#000000","tickWidth":2,"labels":{"style":{"color":"black"}},"title":{"style":{"color":"black"}}},"yAxis":{"opposite":true,"gridLineWidth":2,"gridLineColor":"#F3F3F3","lineColor":"#CEC6B9","minorGridLineColor":"#CEC6B9","labels":{"align":"left","style":{"color":"black"},"x":0,"y":-2},"tickLength":0,"tickColor":"#CEC6B9","tickWidth":1,"title":{"style":{"color":"black"}}},"tooltip":{"backgroundColor":"#FFFFFF","borderColor":"#76c0c1","style":{"color":"#000000"},"valueDecimals":1},"legend":{"layout":"horizontal","align":"left","verticalAlign":"top","itemStyle":{"color":"#3C3C3C"},"itemHiddenStyle":{"color":"#606063"}},"credits":{"style":{"color":"#666"}},"labels":{"style":{"color":"#D7D7D8"}},"drilldown":{"activeAxisLabelStyle":{"color":"#F0F0F3"},"activeDataLabelStyle":{"color":"#F0F0F3"}},"navigation":{"buttonOptions":{"symbolStroke":"#DDDDDD","theme":{"fill":"#505053"}}},"legendBackgroundColor":"rgba(0, 0, 0, 0.5)","background2":"#505053","dataLabelsColor":"#B0B0B3","textColor":"#C0C0C0","contrastTextColor":"#F0F0F3","maskColor":"rgba(255,255,255,0.3)"},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":"Roboto","debug":false},"evals":["hc_opts.tooltip.positioner"],"jsHooks":[]}</script>
+<p>Si distribuimos la satisfacción por sexo / edad / canal /grupo los resultados con los siguientes:</p>
+<div id="htmlwidget-b5c1116a0bd81adb1ecd" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b5c1116a0bd81adb1ecd">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","caption":"<caption>Perfil * Nivel de satisfacción con el proceso de compra<\/caption>","data":[["#Total","Sexo","","Grupos edad","","Tipo de experiencia","","Tipología",""],["","hombre","mujer","25 o menos","más de 25","Online","Física","Tendam","Inditex"],["","A","B","A","B","A","B","A","B"],[" 8.0"," 7.6"," 8.4"," 8.2"," 7.7","8.8"," 7.7","7.7"," 8.0"],[" 1.4"," 1.4"," 1.3"," 1.1"," 1.7","1.0"," 1.4","3.2"," 1.1"],["25.0","12.0","13.0","15.0","10.0","6.0","19.0","3.0","22.0"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Satisfacción global\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Mean\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Std. dev.\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Unw. valid N\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'text-align':'right'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+
+<br>
+<hr>
+<div style="text-align: center;">All rights reserved - 2008-2022 (c) - InvestigaOnline.com</div>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

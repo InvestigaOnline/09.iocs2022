@@ -1,0 +1,64 @@
+---
+title: "Resultados (03)"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+> EN DESARROLLO
+
+
+
+El tercer objetivo estaba relacionado con el conocimiento de qué elementos caracterizadores de las tiendas físicas y online, eran reveladores de las dos puntuaciones anteriores.
+
+
+Para ello, en primer lugar se obtiene qué elementos han sido los más mencionados, pero los distribuiremos en sentido positivo o sentido negativo.
+
+
+```{r echo = FALSE}
+tab <- data %>%
+    tab_subgroup(KPIP1 %in% c(-100,100)) %>%
+    tab_total_row_position('none') %>%
+    tab_cols('|'=unvr(KPIP1)) %>%
+    tab_rows(unvr(R1D) %nest% unvr(R1C)) %>%
+	tab_cells('|'=unvr(mrset_f(P3_))) %>%
+	tab_stat_cpct() %>%
+    tab_pivot() %>%
+    drop_rc() %>%
+    tab_caption('Secciones en las que se fundamenta la satisfacción / instatisfacción')
+as.datatable_widget(tab)
+
+df <- data %>%
+    tab_subgroup(R1D == 1 & KPIP1 %in% c(-100,100)) %>%
+    tab_cols('|'=unvr(KPIP1)) %>%
+    tab_total_row_position('none') %>%
+	tab_cells('|'=unvr(mrset_f(P3_))) %>%
+	tab_stat_cpct() %>%
+    tab_pivot() %>%
+    drop_rc()
+df1 <- as.data.frame(df)
+df <- df1 %>%  pivot_longer(!row_labels, names_to = "group", values_to = "y")
+colnames(df) <- c('elementos', 'grupo', 'porcentaje')
+hchart(df,'column', hcaes(x=elementos, y=porcentaje, group=grupo)) %>%
+    hc_title(text='TENDAM') %>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+
+df <- data %>%
+    tab_subgroup(R1D == 2 & KPIP1 %in% c(-100,100)) %>%
+    tab_cols('|'=unvr(KPIP1)) %>%
+    tab_total_row_position('none') %>%
+	tab_cells('|'=unvr(mrset_f(P3_))) %>%
+	tab_stat_cpct() %>%
+    tab_pivot() %>%
+    drop_rc()
+df1 <- as.data.frame(df)
+df <- df1 %>%  pivot_longer(!row_labels, names_to = "group", values_to = "y")
+colnames(df) <- c('elementos', 'grupo', 'porcentaje')
+hchart(df,'column', hcaes(x=elementos, y=porcentaje, group=grupo)) %>%
+    hc_title(text='INDITEX') %>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+
+```

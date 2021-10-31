@@ -4,7 +4,7 @@ title: 'Perfil del target'
 
 # Descripción de la muestra
 
-Muestra ha sido obtenida por medio de grupos de whatsapp (conocidos y familiares de alumnos) por lo que el muestreo de conveniencia ha sido el método indicado. Ello nos lleva a una muestra sesgada de individuos, no representativos de la estructura poblacional del universo señalado en la [ficha técnica](https://caso2022.investigaonline.com/ficha.html).
+Muestra piloto obtenida con estudiantes Universitat de València, por lo que el muestreo de conveniencia ha sido el método indicado. Ello nos lleva a una muestra sesgada de individuos, no representativos de la estructura poblacional del universo señalado en la [ficha técnica](https://caso2022.investigaonline.com/ficha.html).
 
 
 La distribución por edades de los entrevistados ha sido la siguiente:
@@ -35,6 +35,33 @@ highchart() %>%
     hc_exporting(enabled=TRUE)
 ```
 
+Se ha procedido a realizar una reclasificación de la muestra en dos grupos de edad.
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells(R3REC) %>%
+	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cases(label='casos') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Perfil:','Edad', sep = ''))
+as.datatable_widget(tab)
+```
+
+```{r echo = FALSE}
+df <- data %>%
+	tab_cells('|'=unvr(R3REC)) %>%
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns')
+colnames(df) <- c('name','y')
+highchart() %>%
+    hc_title(text = 'Edad de los entrevistados') %>% 
+    hc_subtitle(text = 'Tramos de Edad') %>% 
+    hc_chart(type = 'pie', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "Edad", showInLegend = TRUE, innerSize='75%' )%>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
 
 Mientras que la distribución por sexos ha sido:
 
@@ -65,7 +92,7 @@ highchart() %>%
 ```
 
 
-La distribución por grupos empresariales (Tendam o Inditex):
+Por último, la distribución por grupos empresariales (Tendam o Inditex):
 
 ```{r echo = FALSE}
 tab <- data %>%
@@ -79,7 +106,7 @@ as.datatable_widget(tab)
 
 ```{r echo = FALSE}
 df <- data %>%
-	tab_cells('|'=unvr(R3)) %>%
+	tab_cells('|'=unvr(R1D)) %>%
 	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
 	tab_pivot(stat_position = 'inside_columns')
 colnames(df) <- c('name','y')
@@ -89,6 +116,92 @@ highchart() %>%
     hc_chart(type = 'pie', polar = FALSE, inverted = FALSE) %>% 
     hc_xAxis(categories = df$name) %>%
     hc_add_series(df,name = "Grupo", showInLegend = TRUE, innerSize='75%' )%>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+Las marcas en las que se realizó compra física u online en los últimos tres meses han sido:
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells(mrset_f(R1A_)) %>%
+	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cases(label='casos') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Perfil:','Marca', sep = ''))
+as.datatable_widget(tab)
+```
+
+```{r echo = FALSE}
+df <- data %>%
+	tab_cells('|'=unvr(mrset_f(R1A))) %>%
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns')
+colnames(df) <- c('name','y')
+highchart() %>%
+    hc_title(text = 'Enseñas de compra') %>% 
+    hc_subtitle(text = 'Marcas') %>% 
+    hc_chart(type = 'pie', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "Marca", showInLegend = FALSE, innerSize='75%' )%>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+De estas marcas, fueron utilizadas para las diferentes valoraciones:
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells(R1B) %>%
+	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cases(label='casos') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Perfil:','Marca valorada', sep = '')) %>%
+    drop_rc()
+as.datatable_widget(tab)
+```
+
+```{r echo = FALSE}
+df <- data %>%
+	tab_cells('|'=unvr(R1B)) %>%
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+    drop_rc()
+colnames(df) <- c('name','y')
+highchart() %>%
+    hc_title(text = 'Marcas valoradas') %>% 
+    hc_subtitle(text = 'Marcas') %>% 
+    hc_chart(type = 'pie', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "Marca", showInLegend = TRUE, innerSize='75%' )%>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+Por canal 8online / física), las cantidad de valoraciones fueron ...
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells(R1C) %>%
+	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cases(label='casos') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Perfil:','Canal', sep = ''))
+as.datatable_widget(tab)
+```
+
+```{r echo = FALSE}
+df <- data %>%
+	tab_cells('|'=unvr(R1C)) %>%
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns')
+colnames(df) <- c('name','y')
+highchart() %>%
+    hc_title(text = 'Canal de calificación') %>% 
+    hc_subtitle(text = '') %>% 
+    hc_chart(type = 'pie', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "Canal", showInLegend = TRUE, innerSize='75%' )%>%
     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
     hc_exporting(enabled=TRUE)
 ```

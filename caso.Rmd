@@ -1,15 +1,21 @@
 ---
-title: 'Introducción al análisis'
+title: 'Descripción del análisis'
 ---
 
 # Introducción
 
+El presente trabajo se desarrolla con el objetivo de obtener las diferencias de percepción y satisfacción en el proceso de compre de la población general de entre 16 y 35 años en las tiendas físicas u online en dos de las tres grandes cadenas nacionales de moda joven: TENDAM e INDITEX. Queda fuera del análisis por expreso deseo del cliente el grupo MANGO.
 
-# Antecedentes
+El análisis se repetirá 3 veces a lo largo del año (cuatrimestral), en los meses de Marzo, Julio y Noviembre de 2022. Se realiza un piloto del mismo en noviembre de 2021.
 
+El análisis se ha estructurado por objetivos, presentando los resultados más significativos en forma de tabla y/o gráfico. Se presentan finalmente las conclusiones más relevantes. 
 
-# Descripción de la situación actual
+De forma independiente, se establece un dashboard de control que contendrá los resultados más relevantes.
 
+La muestra será obtenida a través del _global access panel_ de CINT, contratando una muestra de 400 individuos para cada ola.
 
-# Bibliografía
+Para el piloto, se ha utilizado una muestra de conveniencia de estudiantes de máster en la Universitat de València. No es tanto el objetivo en este piloto ede establecer las diferencias sino de detectar déficit en el instrumento de medición ofrecido.
 
+# Software
+
+Tanto para el dashboard como para el análisis de datos se ha utilizado R software. El informe es entregado como sitio web en formato HTML. Para las pruebas inferenciales se ha utilizado la prueba Chi2 y la prueba t para medios en muestras independintes. Los gráficos son exportables como imagen.

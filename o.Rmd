@@ -4,17 +4,18 @@ title: 'Objetivos y necesidades de información'
 
 # Descripción del problema de investigación
 
-A completar ...
+Se ha solicitado realizar un estudio acerca de las percepciones y satisfacción en el proceso de compra tanto en tienda física como en tienda online de los usuarios de las marcas de los grupos comerciales del sector textil TENDAM e INDITEX.
+
+Para ellos tras revisar un conjunto de fuentes secundarias que nos permitieron acercarnos al problema de investigación, se decidió en conjunto con el cliente que los objetivos de la investigación estuvieran limitados a los aquí bajo descritos.
 
 # Resumen de objetivos y necesidades de información
 
-Para poder alcanzar estos objetivos y tras una reflexión profunda, creemos preciso alcanzar las siguientes necesidades de información que aquí listamos brevemente.
+Para poder abordar el problema del cliente, se decide trabajar sobre estos objetivos:
 
 1. TIENDA ONLINE
     1. SATISFACCIÓN GLOBAL
     1. RECOMENDACIÓN
-    1. LIKES VALORACIÓN POSITIVA
-    1. LIKES VALORACIÓN NEGATIVA
+    1. ELEMENTOS EN QUE SE FUNDAMENTA SATISFACCIÓN / INSATISFACCIÓN
     1. PROBABILIDAD DE RECOMPRA
     1. VALORACIÓN OBJETIVA DEL SERVICIO RECIBIDO EN ÚLTIMA TRANSACCIÓN
     1. VALORACIÓN ATRIBUTOS GENERALES DE TIENDA ONLINE
@@ -25,8 +26,7 @@ Para poder alcanzar estos objetivos y tras una reflexión profunda, creemos prec
 2. TIENDA FÍSICA
     1. SATISFACCIÓN GLOBAL 
     1. RECOMENDACIÓN
-    1. LIKES VALORACIÓN POSITIVA
-    1. LIKES VALORACIÓN NEGATIVA
+    1. ELEMENTOS EN QUE SE FUNDAMENTA SATISFACCIÓN / INSATISFACCIÓN
     1. PROBABILIDAD DE RECOMPRA
     1. VALORACIÓN OBJETIVA DEL SERVICIO RECIBIDO EN ÚLTIMA TRANSACCIÓN
     1. VALORACIÓN ATRIBUTOS GENERALES DE TIENDA FÍSICA
@@ -34,3 +34,5 @@ Para poder alcanzar estos objetivos y tras una reflexión profunda, creemos prec
     1. VALORAR EL PROCESO DE PAGO
     1. VALORAR  ENTREGA CAJA
     1. VALORAR EL PRODUCTO EN LA TIENDA
+    
+Puede observarse que el listado de objetivos es prácticamente común en ambos casos y es por ello que se trataron conjuntamente en la muestra, eso sí diferenciando si la última compra había sido de tipo online o física.
