@@ -9,6 +9,6 @@ date: 'Última actualización en `r Sys.Date()`'
 
 >  Documento redactado con fines académicos, en desarrollo y no revisado.
 
-NOTA DEL AUTOR: 
+## Nota del autor
 
-> **_El presente informe refleja la situación real del caso en la última fecha de actualización. _**
+El presente informe refleja la situación real del caso en la última fecha de actualización.
