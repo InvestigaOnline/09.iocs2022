@@ -21,7 +21,7 @@ suppressMessages(library(readr,quietly =TRUE))
 
 set.seed(311265)
 
-data.total <- suppressMessages(read_spss('~/R/r-projects/iocs2022/Datos_IOCS2022.sav'))
+data.total <- suppressMessages(read_spss('~/R/r-projects/09.iocs2022/Datos_IOCS2022.sav'))
 data.total <- filter(data.total, DURACION > 0)
 data <- data.total %>%  where(ESTADO == 1)
 participantes <- nrow(data.total)
