@@ -1,5 +1,5 @@
 ---
-title: "Resultados (11)"
+title: "Otros análisis"
 ---
 
 ```{r setup, include=FALSE}

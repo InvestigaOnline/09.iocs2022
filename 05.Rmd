@@ -35,6 +35,7 @@ tab <- data %>%
     tab_cells(na_if(P5B, gt(10))) %>%
     tab_stat_mean(label='Media de casos') %>%
     tab_pivot() %>%
+    t() %>%
     tab_caption('Nivel de servicio recibido')
 as.datatable_widget(tab)
 ```

@@ -1,14 +1,20 @@
 ---
-title: 'Caso 2022'
-subtitle: 'InvestigaOnline'
+title: 'Caso 2022<hr>'
+subtitle: 'Comparativa grupos TENDAM / INDITEX<hr>'
 author: 'Roberto Gil-Saura'
-date: 'Última actualización en `r Sys.Date()`'
+date: 'Última actualización en `r Sys.time()`'
 ---
 
-# Introducción
+---
 
->  Documento redactado con fines académicos, en desarrollo y no revisado.
+## Introducción
+
+Documento redactado con fines académicos, en desarrollo y no revisado.
 
 ## Nota del autor
 
 El presente informe refleja la situación real del caso en la última fecha de actualización.
+
+---
+
+<div style="text-align: center;">![](img.jpg)</div>

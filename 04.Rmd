@@ -18,6 +18,7 @@ tab <- data %>%
     tab_cells(na_if(P4, gt(10))) %>%
     tab_stat_mean(label='Media de casos') %>%
     tab_pivot() %>%
+    t() %>%
     tab_caption('Probabilidad de recompra en la tienda')
 as.datatable_widget(tab)
 ```
