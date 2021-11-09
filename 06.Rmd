@@ -22,7 +22,6 @@ tab <- data %>%
     tab_pivot() %>%
     tab_caption('Impresión general causada por la tienda')
 as.datatable_widget(tab)
-
 ```
 
 Si analizamos el KPI derivado ...
@@ -79,4 +78,35 @@ tab <- data %>%
     t() %>%
     tab_caption('Perfil * Impresión general causada por la tienda')
 as.datatable_widget(tab)
+```
+
+El objetivo 06 se completaba también con una pregunta acerca del uso de los probadores. Sus resultados fueron estos. Esta pregunta sólo se realizaba a los entrevistados con última compra en tienda física.
+
+```{r echo = FALSE}
+tab <- data %>%
+    tab_cols(total(),R2, R3REC, R1D) %>%
+	tab_cells(P7) %>%
+	tab_stat_cpct(label='%casos') %>%
+    tab_cells(P7) %>%
+    tab_stat_cases(label='casos') %>%
+	tab_pivot(stat_position='inside_rows') %>%
+    tab_caption('Perfil * Uso de probadores')
+as.datatable_widget(tab)
+```
+
+```{r echo = FALSE}
+df <- data %>%
+	tab_cells('|'=unvr(P7)) %>%
+	tab_stat_cpct(total_row_position = 'none') %>%
+	tab_pivot()
+colnames(df) <- c('name','y')
+df$y <- round(df$y,1)
+highchart() %>%
+    hc_title(text = '') %>% 
+    hc_subtitle(text = 'Uso de probadores') %>% 
+    hc_chart(type = 'pyramid', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "Valor", showInLegend = FALSE, innerSize='75%',dataLabels = list(format="{point.name}<br>({point.y}%)"))%>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
 ```
