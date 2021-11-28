@@ -35,7 +35,7 @@ highchart() %>%
     hc_exporting(enabled=TRUE)
 ```
 
-Se ha procedido a realizar una reclasificación de la muestra en dos grupos de edad.
+Se ha procedido a realizar una re - clasificación de la muestra en dos grupos de edad.
 
 ```{r echo = FALSE}
 tab <- data %>%
@@ -91,8 +91,67 @@ highchart() %>%
     hc_exporting(enabled=TRUE)
 ```
 
+# Screener para obtener pefil deseado
 
-Por último, la distribución por grupos empresariales (Tendam o Inditex):
+Se comenzó solicitando la colaboración. De los `r `nrow(data.total)` que accedieron al estudio ...
+
+```{r echo = FALSE}
+df <- data.total %>%
+	tab_cells('|'=unvr(R0)) %>%
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns')
+colnames(df) <- c('name','y')
+highchart() %>%
+    hc_title(text = 'Colaboración') %>% 
+    hc_subtitle(text = ' ') %>% 
+    hc_chart(type = 'bar', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "Grupo", dataLabels=list(enabled=TRUE), showInLegend = TRUE, colorByPoint=TRUE)%>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+Se continuó cuestionando acerca de las compras en los últimos tres meses...
+
+
+```{r echo = FALSE}
+df <- data.total %>%
+	tab_cells('|'=unvr(mrset_f(R1A_))) %>%
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns') %>% 
+    drop_rc()
+colnames(df) <- c('name','y')
+highchart() %>%
+    hc_title(text = 'Últimas compras en ...') %>% 
+    hc_subtitle(text = 'Selección de tiendas') %>% 
+    hc_chart(type = 'bar', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "Grupo", dataLabels=list(enabled=TRUE,format='{point.y:.2f}'), showInLegend = TRUE, colorByPoint=TRUE)%>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+
+Para continuar analizando quiens habían comprado en los últimos 3 meses en una de las tiendas de TENDAM o INDITEX, grupos de análisis en nuestra investigación.
+
+```{r echo = FALSE}
+df <- data.total %>%
+	tab_cells('|'=unvr(R1B)) %>%
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns') %>% 
+    drop_rc()
+colnames(df) <- c('name','y')
+highchart() %>%
+    hc_title(text = 'Colaboración') %>% 
+    hc_subtitle(text = ' ') %>% 
+    hc_chart(type = 'bar', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "Grupo", dataLabels=list(enabled=TRUE,format='{point.y:.2f}'), showInLegend = TRUE, colorByPoint=TRUE)%>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+De esta forma, la distribución de entrevistados por grupos empresariales (Tendam o Inditex) fue ...
 
 ```{r echo = FALSE}
 tab <- data %>%
@@ -120,7 +179,7 @@ highchart() %>%
     hc_exporting(enabled=TRUE)
 ```
 
-Las marcas en las que se realizó compra física u online en los últimos tres meses han sido:
+Y teniendo en cuenta el modo de compra, las marcas en las que se realizó compra física u online en los últimos tres meses han sido ...
 
 ```{r echo = FALSE}
 tab <- data %>%
@@ -178,7 +237,7 @@ highchart() %>%
     hc_exporting(enabled=TRUE)
 ```
 
-Por canal 8online / física), las cantidad de valoraciones fueron ...
+Por canal (online / física), la cantidad de valoraciones fueron ...
 
 ```{r echo = FALSE}
 tab <- data %>%

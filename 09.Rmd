@@ -6,4 +6,87 @@ title: "Resultados (09)"
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-A completar ...
+El objetivo 09, nos llevaba a conocer la valoración de los diferentes aspectos del proceso de entrega del pedido en/de nuestra tienda.
+
+```{r echo=FALSE, comment=NA}
+tab0 <- data %>%
+        tab_cells('|'=unvr(P15_1)) %>% 
+        tab_stat_cpct(label=var_lab(P15_1), total_row_position='below') %>%
+        tab_cells('|'=unvr(P15_2)) %>% 
+        tab_stat_cpct(label=var_lab(P15_2), total_row_position='below') %>%
+        tab_cells('|'=unvr(P15_3)) %>% 
+        tab_stat_cpct(label=var_lab(P15_3), total_row_position='below') %>%
+        tab_pivot(stat_position='inside_columns') %>%
+        t()
+tab1 <- data %>%
+    tab_cells(
+        na_if(P15_1,gt(10)),
+        na_if(P15_2,gt(10)),
+        na_if(P15_3,gt(10))) %>% 
+    tab_stat_mean() %>%
+    tab_pivot()
+tab1 <- tab1[,-1]
+tab2 <- as.etable(cbind(tab0,tab1))
+tab2 <- tab2[,-1]
+tab2 <- rename(tab2, Total='#Total cases', Media='#Total')
+tab2$row_labels <- str_replace_all(tab2$row_labels, "#Total\\|", "")
+as.datatable_widget(tab2, escape=FALSE, caption=('Valoración del proceso de entrega del pedido'))
+```
+
+Si analizamos el KPI derivado ...
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells(KPIP15) %>%
+	tab_stat_cpct(label='%casos') %>%
+    tab_cells(KPIP15) %>%
+    tab_stat_cases(label='casos') %>%
+    tab_last_hstack() %>%
+    tab_cells(KPIP15) %>%
+    tab_stat_mean(label='KPI-P15') %>%
+    tab_last_hstack() %>%
+	tab_pivot() %>%
+    tab_caption('Índice de Valoración del proceso de entrega del pedido')
+as.datatable_widget(tab)
+```
+
+```{r echo = FALSE}
+df <- data %>%
+	tab_cells('|'=unvr(KPIP15)) %>%
+	tab_stat_cpct(label='% casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns')
+colnames(df) <- c('name','y')
+df$y <- round(df$y,1)
+highchart() %>%
+    hc_title(text = 'Índice de Valoración del proceso de pago del pedido') %>% 
+    hc_subtitle(text = 'KPI-P15') %>% 
+    hc_chart(type = 'pie', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "Valor", showInLegend = FALSE, innerSize='75%',dataLabels = list(format="{point.name}<br>({point.y}%)"))%>%
+    hc_tooltip(useHTML = TRUE,style = list(fontSize = "30px"),headerFormat = "",pointFormat = paste("<br><div style='text-align: center;'>Índice <b><br>",round(mean(data$KPIP15, na.rm = TRUE), 1),"</div>"),
+               positioner = JS(
+                  "function () {
+                    xp =  this.chart.chartWidth/2 - this.label.width/2
+                    yp =  this.chart.chartHeight/2 - this.label.height/2
+                    return { x: xp, y: yp };
+                  }")
+               ,shadow = FALSE,borderWidth = 0,backgroundColor = "transparent",hideDelay = 9999) %>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+Si distribuimos la satisfacción por sexo / edad / canal /grupo los resultados con los siguientes:
+
+```{r echo = FALSE}
+tab <- data %>%
+    tab_cols(total(),R2, R3REC, R1C, R1D) %>%
+    tab_cells(na_if(P15MEAN, gt(10))) %>%
+    tab_stat_mean_sd_n() %>%
+    tab_last_sig_means() %>%
+	tab_pivot() %>%
+    t() %>%
+    tab_caption('Perfil * Valoración del proceso de entrega del pedido')
+as.datatable_widget(tab)
+```
+
+

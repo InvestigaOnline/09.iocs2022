@@ -3,7 +3,7 @@ title: "Verbatim"
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
 El siguiente documento presenta el resultado de la codificación de las preguntas abiertas. El procedimiento seguido ha sido el estándar:

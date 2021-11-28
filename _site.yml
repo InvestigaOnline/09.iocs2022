@@ -10,7 +10,7 @@ navbar:
         href: caso.html
       - text: "Ficha"
         href: ficha.html
-      - text: "Perfil"
+      - text: "Perfil y screening"
         href: perfil.html
       - text: "Objetivos"
         href: objetivos.html
@@ -33,7 +33,7 @@ navbar:
       - text: "Objetivo 07"
         href: 07.html
       - text: "Objetivo 08"
-        href: Objetivo 08.html
+        href: 08.html
       - text: "Objetivo 09"
         href: 09.html
       - text: "Objetivo 10"
