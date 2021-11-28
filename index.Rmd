@@ -1,5 +1,5 @@
 ---
-title: 'Caso 2022<hr>'
+title: 'Caso 2022'
 subtitle: 'Comparativa grupos TENDAM / INDITEX<hr>'
 author: 'Roberto Gil-Saura'
 date: 'Última actualización en `r Sys.time()`'
