@@ -1,6 +1,6 @@
 name: "Tendam / Inditex - Caso 2022"
 navbar:
-  title: "TENDAM / INDITEX"
+  title: "TENDAM-INDITEX"
   left:
     - text: "Home"
       href: index.html
@@ -50,7 +50,7 @@ navbar:
       href: 00.html
     - text: "InvestigaOnline.com"
       icon: fa-search-plus
-      href: "https://www.investigaonline.com"
+      href: "https://blog.investigaonline.com"
 output:
   html_document:
     theme: paper
