@@ -4,7 +4,7 @@ title: 'Perfil del target'
 
 # Descripción de la muestra
 
-Muestra piloto obtenida con estudiantes Universitat de València, por lo que el muestreo de conveniencia ha sido el método indicado. Ello nos lleva a una muestra sesgada de individuos, no representativos de la estructura poblacional del universo señalado en la [ficha técnica](https://caso2022.investigaonline.com/ficha.html).
+Muestra piloto obtenida con estudiantes Universitat de València (Máster MBA Dirección de Empresas), por lo que el muestreo de conveniencia ha sido el método indicado. Ello nos lleva a una muestra sesgada de individuos, no representativos de la estructura poblacional del universo señalado en la [ficha técnica](https://caso2022.investigaonline.com/ficha.html). Posteriormente a la muestra piloto, se han añadido participantes contactos en redes sociales de estudiantes de grado de la Universidad Católica de Valencia (ADE-Plan de marketing, 3er año.)
 
 
 La distribución por edades de los entrevistados ha sido la siguiente:
@@ -106,7 +106,7 @@ highchart() %>%
     hc_subtitle(text = ' ') %>% 
     hc_chart(type = 'bar', polar = FALSE, inverted = FALSE) %>% 
     hc_xAxis(categories = df$name) %>%
-    hc_add_series(df,name = "Grupo", dataLabels=list(enabled=TRUE), showInLegend = TRUE, colorByPoint=TRUE)%>%
+    hc_add_series(df,name = "Grupo", dataLabels=list(enabled=TRUE,format='{point.y:.2f}'), showInLegend = TRUE, colorByPoint=TRUE)%>%
     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
     hc_exporting(enabled=TRUE)
 ```

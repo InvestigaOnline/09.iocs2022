@@ -8,6 +8,8 @@ navbar:
       menu:
       - text: "Caso"
         href: caso.html
+      - text: "Evolución del proyecto"
+        href: "00.html"
       - text: "Ficha"
         href: ficha.html
       - text: "Perfil y screening"
@@ -47,7 +49,7 @@ navbar:
   right:
     - text: "Acerca de ..."
       icon: fa-question-circle
-      href: 00.html
+      href: about.html
     - text: "InvestigaOnline.com"
       icon: fa-search-plus
       href: "https://blog.investigaonline.com"
