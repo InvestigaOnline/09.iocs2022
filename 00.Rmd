@@ -1,5 +1,5 @@
 ---
-title: "Estado del proyecto"
+title: "Proyecto"
 output: 
   flexdashboard::flex_dashboard:
     vertical_layout: fill
@@ -187,7 +187,8 @@ Column
 ### **Nº de Entrevistas día**
 
 ```{r }
-df <- as.data.frame(data %>% filter(ESTADO %in% c(1,5,6,9)) %>% group_by(FECHAFIN) %>% summarise(Entrevistas=n()))
+data$FECHAFIN <- as.Date(data$FECHAFIN,"%d/%m/%Y")
+df <- as.data.frame(data %>% filter(ESTADO %in% c(1,5,6,9)) %>% group_by(FECHAFIN) %>% arrange(FECHAFIN) %>% summarise(Entrevistas=n()))
 hchart(df, 'spline', hcaes(x=FECHAFIN, y=Entrevistas))
 ```
 
