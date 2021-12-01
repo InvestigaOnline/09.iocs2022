@@ -1,6 +1,6 @@
 ---
-title: 'Caso 2022'
-subtitle: 'Comparativa grupos TENDAM / INDITEX<hr>'
+title: 'Tendam vs Inditex'
+subtitle: 'Satisfacción Proceso de Compra<hr>'
 author: 'Roberto Gil-Saura'
 date: 'Última actualización en `r Sys.time()`'
 ---
