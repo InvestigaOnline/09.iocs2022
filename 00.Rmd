@@ -27,67 +27,95 @@ data <- data.total
 options(width=9999)
 
 ## TABLERO DE ESTUDIO
-xx <- length(data$ESTADO[data$ESTADO==1 | data$ESTADO==5 | data$ESTADO==6 | data$ESTADO==9]) # entrevistas finalizadas (entrevistas estados = 1, 5, 6, 9)
-xy <- length(data$ESTADO[(data$ESTADO==0 & data$DURACION>0) | data$ESTADO==2 ]) # entrevistas no finalizadas (entrevistas estado 2)
-xz <- length(data$ESTADO[data$ESTADO==3 | (data$ESTADO==4 & data$DURACION>0) | data$ESTADO==7 | data$ESTADO==8 | data$ESTADO==10 ]) # entrevistas rechazadas (entrevistas estados 3, 4, 7, 8, 10)
+xx <- length(data$ESTADO[data$ESTADO==1 | data$ESTADO==5 | data$ESTADO==6 | data$ESTADO==9]) # finalizadas estados = 1, 5, 6, 9
+xy <- length(data$ESTADO[(data$ESTADO==0 & data$DURACION>0) | data$ESTADO==2 ]) # parciales estados = 0, 2
+xz <- length(data$ESTADO[data$ESTADO==3 | (data$ESTADO==4 & data$DURACION>0) | data$ESTADO==7 | data$ESTADO==8 | data$ESTADO==10 ]) # rechazadas estados = 3, 4, 7, 8, 10
 xw <- xx+xy+xz
 xn <- 400 # muestra teórica
+duracion <- round(mean(data$DURACION[data$ESTADO==1 | data$ESTADO==5 | data$ESTADO==6 | data$ESTADO==9], na.rm=TRUE)/60,2)
+#xx finalizadas
+#xy parciales
+#xz rechazadas
+#xw contactos
+#xn muestra
 
-# PARTIDAS
-I  <- length(data$ESTADO[data$ESTADO==1 | data$ESTADO==5 | data$ESTADO==6 | data$ESTADO==9])
-P  <- length(data$ESTADO[(data$ESTADO==0 & data$DURACION>0) | data$ESTADO==2 ])
-R  <- length(data$ESTADO[data$ESTADO==3 | data$ESTADO==4 | data$ESTADO==7 | data$ESTADO==8 | data$ESTADO==10 ])
-UH <- length(data$ESTADO[data$ESTADO==0 & data$DURACION==0])
-NC <- 0
-O  <- 0
-UO <- 0
-e0 <- 0 
-e <- (I+P+R) / (I+P+R+UH)
-e1 <- 1
+# tasa
+tasa <- round(100*(xx/xw),1)
+# % finalizadas
+gtasa1 <- highchart() %>% 
+    hc_chart(type = 'solidgauge') %>%
+    hc_pane(startAngle = -90,endAngle = 90,background = list(outerRadius = '100%',innerRadius = '60%',shape = 'arc')) %>%
+    hc_tooltip(enabled = FALSE) %>%
+    hc_yAxis(lineWidth = 0,minorTickWidth = 0,tickAmount = 2,min = 0,max = 100,labels = list(y = 25)) %>%
+    hc_add_series(round(100*(xx/xn),1),dataLabels = list(borderWidth = 0,useHTML = TRUE,style = list(fontSize = '2em'))) %>%
+    hc_credits(enabled = TRUE,text = 'InvestigaOnline.com',href = 'https://www.investigaonline.com') %>%
+    hc_exporting(enabled = TRUE) %>%
+    hc_plotOptions(series = list(animation = FALSE))
 
-# CÁLCULOS
+# parciales
+gtasa2 <- highchart() %>% 
+    hc_chart(type = 'solidgauge') %>%
+    hc_pane(startAngle = -90,endAngle = 90,background = list(outerRadius = '100%',innerRadius = '60%',shape = 'arc')) %>%
+    hc_tooltip(enabled = FALSE) %>%
+    hc_yAxis(lineWidth = 0,minorTickWidth = 0,tickAmount = 2,min = 0,max = 100,labels = list(y = 25)) %>%
+    hc_add_series(round(100*(xy/xn),1),dataLabels = list(borderWidth = 0,useHTML = TRUE,style = list(fontSize = '2em'))) %>%
+    hc_credits(enabled = TRUE,text = 'InvestigaOnline.com',href = 'https://www.investigaonline.com') %>%
+    hc_exporting(enabled = TRUE) %>%
+    hc_plotOptions(series = list(animation = FALSE))
 
-#RESPUESTA
-RR1 <- round((I)   / ((I+P) + (R + NC + O) + (e1*(UH + UO))),4)*100
-RR2 <- round((I+P) / ((I+P) + (R + NC + O) + (e1*(UH + UO))),4)*100
-RR3 <- round((I)   / ((I+P) + (R + NC + O) + (e *(UH + UO))),4)*100
-RR4 <- round((I+P) / ((I+P) + (R + NC + O) + (e *(UH + UO))),4)*100
-RR5 <- round((I)   / ((I+P) + (R + NC + O) + (e0*(UH + UO))),4)*100
-RR6 <- round((I+P) / ((I+P) + (R + NC + O) + (e0*(UH + UO))),4)*100
 
-# COOPERACIÓN
-COOP1 <- round((I)   / ((I+P) + (R + O)),4)*100
-COOP2 <- round((I+P) / ((I+P) + (R + O)),4)*100
-COOP3 <- round((I)   / ((I+P) + (R + O)),4)*100
-COOP4 <- round((I+P) / ((I+P) + (R + O)),4)*100
+# rechazos
+gtasa3 <- highchart() %>% 
+    hc_chart(type = 'solidgauge') %>%
+    hc_pane(startAngle = -90,endAngle = 90,background = list(outerRadius = '100%',innerRadius = '60%',shape = 'arc')) %>%
+    hc_tooltip(enabled = FALSE) %>%
+    hc_yAxis(lineWidth = 0,minorTickWidth = 0,tickAmount = 2,min = 0,max = 100,labels = list(y = 25)) %>%
+    hc_add_series(round(100*(xz/xn),1),dataLabels = list(borderWidth = 0,useHTML = TRUE,style = list(fontSize = '2em'))) %>%
+    hc_credits(enabled = TRUE,text = 'InvestigaOnline.com',href = 'https://www.investigaonline.com') %>%
+    hc_exporting(enabled = TRUE) %>%
+    hc_plotOptions(series = list(animation = FALSE))
 
-# RECHAZO
-REF1 <- round((R) / ((I+P) + (R + NC + O) + (e1*(UH + UO))),4)*100
-REF2 <- round((R) / ((I+P) + (R + NC + O) + (e *(UH + UO))),4)*100
-REF3 <- round((R) / ((I+P) + (R + NC + O) + (e0*(UH + UO))),4)*100
+data$FECHAFIN <- as.Date(data$FECHAFIN,"%d/%m/%Y")
+data$FECHAINI <- as.Date(data$FECHAINI,"%d/%m/%Y")
+df <- as.data.frame(data %>% filter(ESTADO %in% c(1,5,6,9)) %>% group_by(FECHAFIN) %>% arrange(FECHAFIN) %>% summarise(Entrevistas=n()))
+dia <- hchart(df, 'spline', hcaes(x=FECHAFIN, y=Entrevistas))%>%
+    hc_credits(enabled = TRUE,text = 'InvestigaOnline.com',href = 'https://www.investigaonline.com') %>%
+    hc_exporting(enabled = TRUE) %>%
+    hc_plotOptions(series = list(animation = FALSE))
 
-# CONTACTO
-CON1 <- round((I + P + R) / ((I+P) + (R + NC + O) + (e1*(UH + UO))),4)*100
-CON2 <- round((I + P + R) / ((I+P) + (R + NC + O) + (e *(UH + UO))),4)*100
-CON3 <- round((I + P + R) / ((I+P) + (R + NC + O) + (e0*(UH + UO))),4)*100
+#gráfico timeline
+name=c("inicio",
+        "lanzamiento",
+        "entrevistas ",
+        "contactos", 
+        "duración", 
+        "final")
+label=c(paste("alta estudio: ",min(data$FECHAINI, na.rm=TRUE)), 
+        paste("primera: ",min(data$FECHAFIN, na.rm=TRUE)), 
+        paste("finalizadas ",xx), 
+        paste("total ",xw), 
+        paste("duración: ",duracion," minutos"), 
+        paste("última: ",max(data$FECHAFIN, na.rm=TRUE)))
+description=c(min(data$FECHAINI, na.rm=TRUE), 
+        min(data$FECHAFIN, na.rm=TRUE), 
+        xx, 
+        xw, 
+        duracion, 
+        max(data$FECHAFIN, na.rm=TRUE))
+tml <- data.frame(name, label, description)
 
-#Cumplimiento de muestra
-gtasa1 <- gauge(round((xx / xn) * 100, 1), 0, 100, label = '%', abbreviate = TRUE, abbreviateDecimals = 1)
-
-#Cumplimiento sobre muestra
-gtasa2 <- gauge(round((xx / xw) * 100, 1), 0, 100, label = '%', abbreviate = TRUE, abbreviateDecimals = 1)
-
-#Tasa de rechazo
-gtasa3 <- gauge(round((xz / xw) * 100, 1), 0, 100, label = '%', abbreviate = TRUE, abbreviateDecimals = 1)
-
-#Tasa de aplazamiento sobre entrevistas finalizadas
-gtasa4 <- gauge(round((xy / xx) * 100, 1), 0, 100, label = '%', abbreviate = TRUE, abbreviateDecimals = 1)
-
-#Tasa de aplazamiento sobre entrevistas iniciadas
-gtasa5 <- gauge(round((xy / xw) * 100, 1), 0, 100, label = '%', abbreviate = TRUE, abbreviateDecimals = 1)
-
-#Tasa de rechazos sobre sobre entrevistas finalizadas
-gtasa6 <- gauge(round((xz / xx) * 100, 1), 0, 100, label = '%', abbreviate = TRUE, abbreviateDecimals = 1)
+timeline <- highchart() %>%
+    hc_chart(type = 'timeline') %>%
+    hc_xAxis(visible = FALSE) %>%
+    hc_yAxis(visible = FALSE) %>%
+    hc_legend(enable=FALSE) %>%
+    hc_title(text = var_lab(data$ESTUDIO)) %>%
+    hc_tooltip(enabled=FALSE) %>%
+    hc_colors(c('#4185F3','#427CDD','#406AB2','#3E5A8E','#3B4A68','#363C46')) %>%
+    hc_add_series(data=tml, name='Timeline', keys=c('name', 'label', 'description'))%>%
+    hc_credits(enabled = TRUE,text = 'InvestigaOnline.com',href = 'https://www.investigaonline.com') %>%
+    hc_exporting(enabled = TRUE) %>%
+    hc_plotOptions(series = list(animation = FALSE))
 ```
 
 Datos
@@ -118,7 +146,7 @@ Column
 
 ### Duración
 
-`r valueBox(round(mean(data$DURACION[data$ESTADO==1 | data$ESTADO==5 | data$ESTADO==6 | data$ESTADO==9], na.rm=TRUE)/60,2), caption = 'duracion minutos', icon = 'fa-clock', color = '#ffaa04')`
+`r valueBox(duracion, caption = 'duracion minutos', icon = 'fa-clock', color = '#ffaa04')`
 
 Column
 -------------------------------------
@@ -127,108 +155,28 @@ Column
 
 `r gtasa1`
 
-### **Respuesta sobre iniciadas**  
+### **Parciales**  
 
 `r gtasa2`
 
-### AAPOR 
-
-Respuesta
-
-* RR1 = `r round(RR1,1) `%
-* RR2 = `r round(RR2,1) `%
-* RR3 = `r round(RR3,1) `%
-* RR4 = `r round(RR4,1) `%
-* RR5 = `r round(RR5,1) `%
-* RR6 = `r round(RR6,1) `%
-
-Rechazo
-
-* REF1= `r round(REF1,1)`%
-* REF2= `r round(REF2,1)`%
-* REF3= `r round(REF3,1)`%
-
-
-Column
--------------------------------------
-
-### **Parciales sobre iniciadas**
-
-`r gtasa5`
-
-### **Rechazo sobre iniciadas**
+### **Rechazadas**
 
 `r gtasa3`
 
-### AAPOR cooperación y contacto
-
-* Cooperación
-    * COOP1= `r round(COOP1,1)`%
-    * COOP2= `r round(COOP2,1)`%
-    * COOP3= `r round(COOP3,1)`%
-    * COOP4= `r round(COOP4,1)`%
-* Contacto
-    * CON1= `r round(CON1,1)`%
-    * CON2= `r round(CON2,1)`%
-    * CON3= `r round(CON3,1)`%
-
-
 Column
 ------------------------------------
-
-### **Parciales sobre finalizadas**
-
-`r gtasa4`
-
-### **Rechazo sobre finalizadas**     
-
-`r gtasa6`
 
 ### **Nº de Entrevistas día**
 
-```{r }
-data$FECHAFIN <- as.Date(data$FECHAFIN,"%d/%m/%Y")
-df <- as.data.frame(data %>% filter(ESTADO %in% c(1,5,6,9)) %>% group_by(FECHAFIN) %>% arrange(FECHAFIN) %>% summarise(Entrevistas=n()))
-hchart(df, 'spline', hcaes(x=FECHAFIN, y=Entrevistas))
-```
+`r dia`
 
-Descripciones
-=====================================
+### Timeline del proyecto
 
-Column
-------------------------------------
-
-|Ratio|Fórmula|Descripción|
-|:---|:---:|:---|
-|Ratios de respuesta:	|RR1= I / ((I+P)+(R+NC+O)+(UH+UO))|El ratio de respuesta 1 (RR1), o mínimo ratio de respuesta, es el número de entrevistas completas dividido por el número de entrevistas totales (completas y parciales más el número de rechazos e interrumpidas, más todos los casos de desconocida elegibilidad.|
-|	|RR2= (I+P) / ((I+P)+(R+NC+O)+(UH+UO))|El ratio de respuesta 2 (RR2), incluye además en el numerador las entrevistas parciales.|
-|	|RR3=I / ((I+P)+(R+NC+O)+e(UH+UO))|El ratio de respuesta 3 (RR3) calcula la proporción de entrevistas completas sobre dividido por el número de entrevistas totales (completas y parciales más el número de rechazos e interrumpidas, más todos los casos de desconocida elegibilidad corregidos estos últimos por un factor de elegibilidad. El coeficiente estimado es conveniente quede documentado en su generación, para no ser utilizado en virtud e aumentar la tasa de respuesta.|
-|	|RR4= (I+P) / ((I+P)+(R+NC+O)+e(UH+UO))|El ratio de respuesta 4 (RR4) no sólo corrige los casos de elegibilidad desconocida al igual que en RR3, sino también incluye entrevistas parcial como demandados como en RR2.|
-|	|RR5= I / ((I+P)+(R+NC+O))|El ratio de respuesta 5 (RR5) es un caso especial de RR3 en que se supone que e = 0 (es decir, no hay elegibilidad desconocida) o en el caso raro de que no hay estimación de casos que pudieran haber sido elegidos entre los no elegibles.|
-|	|RR6= (I+P / ((I+P)+(R+NC+O))|El ratio de respuesta 6 (RR6) hace el mismo supuesto, y también incluye las entrevistas parciales. RR6 representa el ratio de respuesta más elevado.|
-|Ratios de cooperación:	|COOP1= I / ((I+P)+(R+O))|COOP1, tipo de cooperación mínima, es el número de entrevistas completas dividido por el número de entrevistas (completa más parcial) más el número de entrevistas que no implican la identificación y el contacto con un informante elegible (negativa y otros).|
-|	|COOP2= (I+P) / ((I+P)+(R+O))|COOP2 cuenta el numerador las entrevistas parciales.|
-|	|COOP3= I / ((I+P)+(R))|COOP3, elimina a los que no pueden hacer una entrevista como también incapaz de cooperación y se les excluye de la base de cómputo.|
-|	|COOP4= (I+P) / ((I+P)+(R)|COOP4 incluye las entrevistas parciales en el numerador.|
-|Ratios de rechazo:	|REF1=R/((I+P)+(R+NC+O)+(UH+UO))|El Ratio de rechazo 1 (REF1) es el número de rechazos dividos por la suma de entrevistas (finalizadas y parciales), el grupo de rechazo, no contactos y otros, y los casos de desconocida eligibilidad.|
-|	|REF2=R/((I+P)+(R+NC+O)+e(UH+UO))|El ratio de rechazo 2 (REF2) incluye la estimación sobre los casos de desconocida elegibilidad.|
-|	|REF3=R/((I+P)+(R+NC+O))|REF3 elimina la parte de desconocida elegibilidad.|
-|Ratios de contacto:	|CON1=((I+P)+R+O)/((I+P)+(R+O+NC)+(UH+UO))|Contact Rate 1 (CON1) asume que todos los casos de desconocida elegibilidad son actualmente elegibles.|
-|	|CON2=((I+P)+R+O)/((I+P)+(R+O+NC)+e(UH+UO))|Contact Rate 2 (CON2) incluye en la base solo la estimación de los casos elegibles entre los casos de desconocida elegibilidad.|
-|	|CON3=((I+P)+R+O)/(I+P)+(R+O+NC)|Contact Rate 3 (CON3) incluye en la base sólo los casos con elegibilidad conocida.|
-
+`r timeline`
 
 ```{r echo=FALSE}
 set.seed(311265)
-data.total <- suppressMessages(read_spss('~/R/r-projects/09.iocs2022/Datos_IOCS2022.sav'))
-data.total <- filter(data.total, DURACION > 0)
-data <- data.total %>%  where(ESTADO == 1)
-#participantes <- nrow(data.total)
-#nointer <- nrow(data.total %>%  where(DURACION == 0))
-#parciales <- nrow(data.total %>%  where(!ESTADO == 1 & DURACION > 0 ))
-#finalizadas <- nrow(data.total %>%  where(ESTADO == 1))
-#respuesta <- (finalizadas / participantes) * 100
-col_stops <-data.frame(q = c(0.25, 0.50, 0.75),c = c('#CD5C5C', '#F0E68C', '#3CB371'),stringsAsFactors = FALSE)
-stops <- list_parse2(col_stops)
+data <- suppressMessages(read_spss('~/R/r-projects/09.iocs2022/Datos_IOCS2022.sav'))
+data <- data %>%  where(ESTADO %in% c(1,5,6,9))
 options(highcharter.theme = hc_theme_bloom(tooltip = list(valueDecimals = 1)))
 ```

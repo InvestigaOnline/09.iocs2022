@@ -7,7 +7,7 @@ La encuesta fue administrada de forma online. Para ello se utilizó el softwware
 
 # Ficha técnica
 
-El enlace fue visitado por `r xw`, de los que `r xy` iniciaron la entrevista no acabando la misma, y por tanto, hubo `r xx` participantes que la consiguieron acabar. Hay un ratio de respuesta de `r round(RR3,1)` %. 
+El enlace fue visitado por `r xw`, de los que `r xy` iniciaron la entrevista no acabando la misma, y por tanto, hubo `r xx` participantes que la consiguieron acabar. Hay un ratio de respuesta de `r round(tasa,1)` %. 
 ```{r echo = FALSE}
 ficha <-
     data.frame (
@@ -37,7 +37,7 @@ ficha <-
        'Fase de test: Octubre - Noviembre 2021' ,
        '<a href="https://www.tesigandia.com/gandia-integra/">Integra</a>, un producto de <a href="https://www.tesigandia.com">TESI, SL</a>',
        'R, por <a href="https://www.investigaonline.com">InvestigaOnline.com</a>',
-       paste(round(RR3,1), ' %', sep= ''),
+       paste(tasa, ' %', sep = ''),
        'Test realizado estudiantes MBA - Universitat de València - <a href="https://www.investigaonline.com">InvestigaOnline.com</a><br>Ola 1 realizada por contactos en redes sociales de los estudionates de ADE Uninersidad Católica de Valencia (asignatura Plan de marketing).')
      )
 kbl(ficha, escape=FALSE) %>% 
