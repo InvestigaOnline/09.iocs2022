@@ -38,7 +38,7 @@ ficha <-
        '<a href="https://www.tesigandia.com/gandia-integra/">Integra</a>, un producto de <a href="https://www.tesigandia.com">TESI, SL</a>',
        'R, por <a href="https://www.investigaonline.com">InvestigaOnline.com</a>',
        paste(tasa, ' %', sep = ''),
-       'Test realizado estudiantes MBA - Universitat de València - <a href="https://www.investigaonline.com">InvestigaOnline.com</a><br>Ola 1 realizada por contactos en redes sociales de los estudionates de ADE Uninersidad Católica de Valencia (asignatura Plan de marketing).')
+       'Test realizado estudiantes MBA - Universitat de València - <a href="https://www.investigaonline.com">InvestigaOnline.com</a><br>Ola 1 realizada por contactos en redes sociales de los estudiantes de ADE Universidad Católica de Valencia (asignatura Plan de Marketing).')
      )
 kbl(ficha, escape=FALSE) %>% 
      kable_styling(bootstrap_options = c("striped", "hover", 'condensed'), full_width = F)

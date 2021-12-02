@@ -116,6 +116,16 @@ timeline <- highchart() %>%
     hc_credits(enabled = TRUE,text = 'InvestigaOnline.com',href = 'https://www.investigaonline.com') %>%
     hc_exporting(enabled = TRUE) %>%
     hc_plotOptions(series = list(animation = FALSE))
+
+cati <- length(data$ESTUDIO[data$ENTREVISTADOR>0 & data$ESTADO %in% c(1,5)])
+capi <- length(data$ESTUDIO[data$ENTREVISTADOR>0 & data$ESTADO %in% c(6,8)])
+cawi <- length(data$ESTUDIO[data$ENTREVISTADOR<0 & data$ESTADO %in% c(1,5)])
+dfcanal <- data.frame(canal=c("cati", "capi", "cawi"), entrevistas=c(cati, capi, cawi))
+gcanal <- hchart(dfcanal, 'bar', hcaes(x=canal, y=entrevistas)) %>% 
+    hc_title(text='Entrevistas por canal') %>% 
+    hc_credits(enabled = TRUE,text = 'InvestigaOnline.com',href = 'https://www.investigaonline.com') %>%
+    hc_exporting(enabled = TRUE) %>%
+    hc_plotOptions(series = list(animation = FALSE))
 ```
 
 Datos
