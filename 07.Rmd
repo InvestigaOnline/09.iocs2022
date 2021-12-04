@@ -11,7 +11,7 @@ El objetivo 7 hacía referencia al uso de los probadores en las tiendas físicas
 ```{r echo = FALSE}
 tab <- data %>%
 	tab_cells(P7) %>%
-	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cpct(label='% casos') %>%
     tab_cells(P7) %>%
     tab_stat_cases(label='casos') %>%
     tab_last_hstack() %>%

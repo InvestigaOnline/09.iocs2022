@@ -4,7 +4,7 @@ title: 'Perfil del target'
 
 # Descripción de la muestra
 
-Muestra piloto obtenida con estudiantes Universitat de València (Máster MBA Dirección de Empresas), por lo que el muestreo de conveniencia ha sido el método indicado. Ello nos lleva a una muestra sesgada de individuos, no representativos de la estructura poblacional del universo señalado en la [ficha técnica](https://caso2022.investigaonline.com/ficha.html). Posteriormente a la muestra piloto, se han añadido participantes contactos en redes sociales de estudiantes de grado de la Universidad Católica de Valencia (ADE-Plan de marketing, 3er año.)
+Muestra obtenida con estudiantes Universitat de València (Máster MBA Dirección de Empresas) y posteriormente completado con red de proximidad (contactos sociales) de los alumnos de al asignatura de Plan de Marketing - investigación de Mercados del grdao ADE en la Universidad Católica de Valencia, por lo que el muestreo de conveniencia ha sido el método indicado. Ello nos lleva a una muestra sesgada de individuos, no representativos de la estructura poblacional del universo señalado en la [ficha técnica](https://caso2022.investigaonline.com/ficha.html).
 
 
 La distribución por edades de los entrevistados ha sido la siguiente:
@@ -12,7 +12,7 @@ La distribución por edades de los entrevistados ha sido la siguiente:
 ```{r echo = FALSE}
 tab <- data %>%
 	tab_cells(R3) %>%
-	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cpct(label='% casos') %>%
 	tab_stat_cases(label='casos') %>%
 	tab_pivot(stat_position = 'inside_columns') %>%
 	tab_caption(paste('Perfil:','Edad', sep = ''))
@@ -22,8 +22,9 @@ as.datatable_widget(tab)
 ```{r echo = FALSE}
 df <- data %>%
 	tab_cells('|'=unvr(R3)) %>%
-	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
-	tab_pivot(stat_position = 'inside_columns')
+	tab_stat_cpct(label='% casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+    drop_rc()
 colnames(df) <- c('name','y')
 highchart() %>%
     hc_title(text = 'Edad de los entrevistados') %>% 
@@ -40,7 +41,7 @@ Se ha procedido a realizar una re - clasificación de la muestra en dos grupos d
 ```{r echo = FALSE}
 tab <- data %>%
 	tab_cells(R3REC) %>%
-	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cpct(label='% casos') %>%
 	tab_stat_cases(label='casos') %>%
 	tab_pivot(stat_position = 'inside_columns') %>%
 	tab_caption(paste('Perfil:','Edad', sep = ''))
@@ -50,7 +51,7 @@ as.datatable_widget(tab)
 ```{r echo = FALSE}
 df <- data %>%
 	tab_cells('|'=unvr(R3REC)) %>%
-	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_stat_cpct(label='% casos', total_row_position = 'none') %>%
 	tab_pivot(stat_position = 'inside_columns')
 colnames(df) <- c('name','y')
 highchart() %>%
@@ -68,7 +69,7 @@ Mientras que la distribución por sexos ha sido:
 ```{r echo = FALSE}
 tab <- data %>%
 	tab_cells(R2) %>%
-	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cpct(label='% casos') %>%
 	tab_stat_cases(label='casos') %>%
 	tab_pivot(stat_position = 'inside_columns') %>%
 	tab_caption(paste('Perfil:','SEXO', sep = ''))
@@ -78,7 +79,7 @@ as.datatable_widget(tab)
 ```{r echo = FALSE}
 df <- data %>%
 	tab_cells('|'=unvr(R2)) %>%
-	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_stat_cpct(label='% casos', total_row_position = 'none') %>%
 	tab_pivot(stat_position = 'inside_columns')
 colnames(df) <- c('name','y')
 highchart() %>%
@@ -98,7 +99,7 @@ Se comenzó solicitando la colaboración. De los `r `nrow(data.total)` que acced
 ```{r echo = FALSE}
 df <- data.total %>%
 	tab_cells('|'=unvr(R0)) %>%
-	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_stat_cpct(label='% casos', total_row_position = 'none') %>%
 	tab_pivot(stat_position = 'inside_columns')
 colnames(df) <- c('name','y')
 highchart() %>%
@@ -117,7 +118,7 @@ Se continuó cuestionando acerca de las compras en los últimos tres meses...
 ```{r echo = FALSE}
 df <- data.total %>%
 	tab_cells('|'=unvr(mrset_f(R1A_))) %>%
-	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_stat_cpct(label='% casos', total_row_position = 'none') %>%
 	tab_pivot(stat_position = 'inside_columns') %>% 
     drop_rc()
 colnames(df) <- c('name','y')
@@ -132,12 +133,12 @@ highchart() %>%
 ```
 
 
-Para continuar analizando quiens habían comprado en los últimos 3 meses en una de las tiendas de TENDAM o INDITEX, grupos de análisis en nuestra investigación.
+Para continuar analizando quienes habían comprado en los últimos 3 meses en una de las tiendas de TENDAM o INDITEX, grupos de análisis en nuestra investigación.
 
 ```{r echo = FALSE}
 df <- data.total %>%
 	tab_cells('|'=unvr(R1B)) %>%
-	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_stat_cpct(label='% casos', total_row_position = 'none') %>%
 	tab_pivot(stat_position = 'inside_columns') %>% 
     drop_rc()
 colnames(df) <- c('name','y')
@@ -156,7 +157,7 @@ De esta forma, la distribución de entrevistados por grupos empresariales (Tenda
 ```{r echo = FALSE}
 tab <- data %>%
 	tab_cells(R1D) %>%
-	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cpct(label='% casos') %>%
 	tab_stat_cases(label='casos') %>%
 	tab_pivot(stat_position = 'inside_columns') %>%
 	tab_caption(paste('Perfil:','Grupo', sep = ''))
@@ -166,7 +167,7 @@ as.datatable_widget(tab)
 ```{r echo = FALSE}
 df <- data %>%
 	tab_cells('|'=unvr(R1D)) %>%
-	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_stat_cpct(label='% casos', total_row_position = 'none') %>%
 	tab_pivot(stat_position = 'inside_columns')
 colnames(df) <- c('name','y')
 highchart() %>%
@@ -184,7 +185,7 @@ Y teniendo en cuenta el modo de compra, las marcas en las que se realizó compra
 ```{r echo = FALSE}
 tab <- data %>%
 	tab_cells(mrset_f(R1A_)) %>%
-	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cpct(label='% casos') %>%
 	tab_stat_cases(label='casos') %>%
 	tab_pivot(stat_position = 'inside_columns') %>%
 	tab_caption(paste('Perfil:','Marca', sep = ''))
@@ -194,7 +195,7 @@ as.datatable_widget(tab)
 ```{r echo = FALSE}
 df <- data %>%
 	tab_cells('|'=unvr(mrset_f(R1A))) %>%
-	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_stat_cpct(label='% casos', total_row_position = 'none') %>%
 	tab_pivot(stat_position = 'inside_columns')
 colnames(df) <- c('name','y')
 highchart() %>%
@@ -212,7 +213,7 @@ De estas marcas, fueron utilizadas para las diferentes valoraciones:
 ```{r echo = FALSE}
 tab <- data %>%
 	tab_cells(R1B) %>%
-	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cpct(label='% casos') %>%
 	tab_stat_cases(label='casos') %>%
 	tab_pivot(stat_position = 'inside_columns') %>%
 	tab_caption(paste('Perfil:','Marca valorada', sep = '')) %>%
@@ -223,7 +224,7 @@ as.datatable_widget(tab)
 ```{r echo = FALSE}
 df <- data %>%
 	tab_cells('|'=unvr(R1B)) %>%
-	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_stat_cpct(label='% casos', total_row_position = 'none') %>%
 	tab_pivot(stat_position = 'inside_columns') %>%
     drop_rc()
 colnames(df) <- c('name','y')
@@ -242,7 +243,7 @@ Por canal (online / física), la cantidad de valoraciones fueron ...
 ```{r echo = FALSE}
 tab <- data %>%
 	tab_cells(R1C) %>%
-	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cpct(label='% casos') %>%
 	tab_stat_cases(label='casos') %>%
 	tab_pivot(stat_position = 'inside_columns') %>%
 	tab_caption(paste('Perfil:','Canal', sep = ''))
@@ -252,7 +253,7 @@ as.datatable_widget(tab)
 ```{r echo = FALSE}
 df <- data %>%
 	tab_cells('|'=unvr(R1C)) %>%
-	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_stat_cpct(label='% casos', total_row_position = 'none') %>%
 	tab_pivot(stat_position = 'inside_columns')
 colnames(df) <- c('name','y')
 highchart() %>%

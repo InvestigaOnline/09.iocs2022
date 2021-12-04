@@ -13,14 +13,14 @@ tab <- data %>%
     tab_subgroup(R1C==1) %>% 
     tab_row_label('Web') %>% 
 	tab_cells(P8) %>%
-	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cpct(label='% casos') %>%
     tab_cells(P8) %>%
     tab_stat_cases(label='casos') %>%
     tab_last_hstack() %>%
     tab_subgroup(R1C==2) %>% 
     tab_row_label('Física') %>% 
 	tab_cells(P8) %>%
-	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cpct(label='% casos') %>%
     tab_cells(P8) %>%
     tab_stat_cases(label='casos') %>%
     tab_last_hstack() %>%
@@ -32,14 +32,14 @@ tab <- data %>%
     tab_subgroup(R1C==1) %>% 
     tab_row_label('Web') %>% 
 	tab_cells(P9) %>%
-	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cpct(label='% casos') %>%
     tab_cells(P9) %>%
     tab_stat_cases(label='casos') %>%
     tab_last_hstack() %>%
     tab_subgroup(R1C==2) %>% 
     tab_row_label('Física') %>% 
 	tab_cells(P9) %>%
-	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cpct(label='% casos') %>%
     tab_cells(P9) %>%
     tab_stat_cases(label='casos') %>%
     tab_last_hstack() %>%
@@ -51,14 +51,14 @@ tab <- data %>%
     tab_subgroup(R1C==1) %>% 
     tab_row_label('Web') %>% 
 	tab_cells(P10) %>%
-	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cpct(label='% casos') %>%
     tab_cells(P10) %>%
     tab_stat_cases(label='casos') %>%
     tab_last_hstack() %>%
     tab_subgroup(R1C==2) %>% 
     tab_row_label('Física') %>% 
 	tab_cells(P10) %>%
-	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cpct(label='% casos') %>%
     tab_cells(P10) %>%
     tab_stat_cases(label='casos') %>%
     tab_last_hstack() %>%
@@ -70,14 +70,14 @@ tab <- data %>%
     tab_subgroup(R1C==1) %>% 
     tab_row_label('Web') %>% 
 	tab_cells(P11) %>%
-	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cpct(label='% casos') %>%
     tab_cells(P11) %>%
     tab_stat_cases(label='casos') %>%
     tab_last_hstack() %>%
     tab_subgroup(R1C==2) %>% 
     tab_row_label('Física') %>% 
 	tab_cells(P11) %>%
-	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cpct(label='% casos') %>%
     tab_cells(P11) %>%
     tab_stat_cases(label='casos') %>%
     tab_last_hstack() %>%
@@ -89,14 +89,14 @@ tab <- data %>%
     tab_subgroup(R1C==1) %>% 
     tab_row_label('Web') %>% 
 	tab_cells(P12) %>%
-	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cpct(label='% casos') %>%
     tab_cells(P12) %>%
     tab_stat_cases(label='casos') %>%
     tab_last_hstack() %>%
     tab_subgroup(R1C==2) %>% 
     tab_row_label('Física') %>% 
 	tab_cells(P12) %>%
-	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cpct(label='% casos') %>%
     tab_cells(P12) %>%
     tab_stat_cases(label='casos') %>%
     tab_last_hstack() %>%
@@ -160,7 +160,7 @@ Si analizamos el KPI derivado ...
 ```{r echo = FALSE}
 tab <- data %>%
 	tab_cells(KPIP13) %>%
-	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cpct(label='% casos') %>%
     tab_cells(KPIP13) %>%
     tab_stat_cases(label='casos') %>%
     tab_last_hstack() %>%

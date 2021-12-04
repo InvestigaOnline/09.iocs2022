@@ -11,7 +11,7 @@ El primer objetivo estaba relacionado con la satisfacción declarada con el proc
 ```{r echo = FALSE}
 tab <- data %>%
 	tab_cells(P1) %>%
-	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cpct(label='% casos') %>%
     tab_cells(P1) %>%
     tab_stat_cases(label='casos') %>%
     tab_last_hstack() %>%
@@ -28,7 +28,7 @@ Si analizamos el KPI derivado ...
 ```{r echo = FALSE}
 tab <- data %>%
 	tab_cells(KPIP1) %>%
-	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cpct(label='% casos') %>%
     tab_cells(KPIP1) %>%
     tab_stat_cases(label='casos') %>%
     tab_last_hstack() %>%
