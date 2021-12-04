@@ -8,23 +8,20 @@ knitr::opts_chunk$set(echo = FALSE)
 
 > EN DESARROLLO
 
-
-
 El tercer objetivo estaba relacionado con el conocimiento de qué elementos caracterizadores de las tiendas físicas y online, eran reveladores de las dos puntuaciones anteriores.
 
 
-Para ello, en primer lugar se obtiene qué elementos han sido los más mencionados, pero los distribuiremos en sentido positivo o sentido negativo.
+Para ello, en primer lugar se obtiene qué elementos han sido los más mencionados, pero los distribuiremos en sentido positivo o sentido negativo, obteniendo la tasa para cada ítem valorado, según la satisfacción, el canal y el grupo.
 
 
 ```{r echo = FALSE}
 tab <- data %>%
     tab_subgroup(KPIP1 %in% c(-100,100)) %>%
     tab_total_row_position('none') %>%
-    tab_cols('|'=unvr(KPIP1)) %>%
-    tab_rows(unvr(R1D) %nest% unvr(R1C)) %>%
+    tab_cols(unvr(KPIP1) %nest% unvr(R1C) %nest% unvr(R1D)) %>%
 	tab_cells('|'=unvr(mrset_f(P3_))) %>%
-	tab_stat_cpct() %>%
-    tab_pivot() %>%
+	tab_stat_rpct() %>%
+    tab_pivot(stat_position='outside_rows') %>%
     drop_rc() %>%
     tab_caption('Secciones en las que se fundamenta la satisfacción / instatisfacción')
 as.datatable_widget(tab)
@@ -34,7 +31,7 @@ df <- data %>%
     tab_cols('|'=unvr(KPIP1)) %>%
     tab_total_row_position('none') %>%
 	tab_cells('|'=unvr(mrset_f(P3_))) %>%
-	tab_stat_cpct() %>%
+	tab_stat_rpct() %>%
     tab_pivot() %>%
     drop_rc()
 df1 <- as.data.frame(df)
