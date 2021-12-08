@@ -1,12 +1,21 @@
 ---
 title: "Resultados (02)"
+output: 
+  html_document: 
+    theme: flatly
+    number_sections: yes
+    df_print: kable
+editor_options: 
+  chunk_output_type: inline
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-El objetivo 02 estaba relacionado con la posibilidad de recomendar la tienda física u online tras haber cumplido con el ciclo de la compra. Se utilizaba para ello una escala de recomendación donde el 0 era "no recomendaría" la tienda a familiares / amigos y 10 implicaba seguridad en la recomendación.
+El objetivo 02 estaba relacionado con la posibilidad de recomendar la tienda física u online tras haber cumplido con el ciclo de la compra. Se
+utilizaba para ello una escala de recomendación donde el 0 era "no recomendaría" la tienda a familiares / amigos y 10 implicaba seguridad en la
+recomendación.
 
 ```{r echo = FALSE}
 tab <- data %>%
@@ -65,7 +74,7 @@ highchart() %>%
     hc_exporting(enabled=TRUE)
 ```
 
-Si distribuimos la satisfacción por sexo / edad / canal /grupo los resultados con los siguientes:
+Si distribuimos el grado de recomendación por sexo / edad / canal /grupo los resultados con los siguientes:
 
 ```{r echo = FALSE}
 tab <- data %>%
@@ -78,3 +87,6 @@ tab <- data %>%
     tab_caption('Perfil * Nivel de recomendación de la tienda')
 as.datatable_widget(tab)
 ```
+
+Observamos que las únicas diferencias significativas en función del grado de recoemendación, se producen en las mujeres (A en fila mujer), donde esta
+grupo presenta una valoración mayor.

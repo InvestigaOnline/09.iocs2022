@@ -1,12 +1,16 @@
 ---
 title: "Resultados (01)"
+editor_options: 
+  chunk_output_type: inline
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-El primer objetivo estaba relacionado con la satisfacción declarada con el proceso de compra. Primera pregunta del instrumento de medición, tras el _screening_ tratando de eliminar sesgo que el propio instrumento de medición pudiera introducir al ser administrado. La medición del objeto *satisfacción* se realiza con una escala de 0 a 10, donde el 0 era muy insatisfecho y el 10 muy satisfecho.
+El primer objetivo estaba relacionado con la satisfacción declarada con el proceso de compra. Primera pregunta del instrumento de medición, tras el
+*screening* tratando de eliminar sesgo que el propio instrumento de medición pudiera introducir al ser administrado. La medición del objeto
+*satisfacción* se realiza con una escala de 0 a 10, donde el 0 era muy insatisfecho y el 10 muy satisfecho.
 
 ```{r echo = FALSE}
 tab <- data %>%
@@ -23,7 +27,8 @@ tab <- data %>%
 as.datatable_widget(tab)
 ```
 
-Si analizamos el KPI derivado ...
+Calculamos sobre esta grado de satisfacción un indicador del grado de satisfacción, clasificando a los compradores como satisfechos (valoración 9 y
+10) o insatisfechos (valoración 0 a 6). Analizamos el KPI derivado.
 
 ```{r echo = FALSE}
 tab <- data %>%
@@ -39,6 +44,8 @@ tab <- data %>%
     tab_caption('Índice de satisfacción con el proceso de compra')
 as.datatable_widget(tab)
 ```
+
+En modo gráfico podemos observar el valor que el indicador toma: `r round(mean(data$KPIP1, na.rm=TRUE),1)`
 
 ```{r echo = FALSE}
 df <- data %>%
@@ -65,7 +72,7 @@ highchart() %>%
     hc_exporting(enabled=TRUE)
 ```
 
-Si distribuimos la satisfacción por sexo / edad / canal /grupo los resultados con los siguientes:
+Si distribuimos esa satisfacción por sexo / edad / canal / grupo los resultados con los siguientes:
 
 ```{r echo = FALSE}
 tab <- data %>%
@@ -78,3 +85,6 @@ tab <- data %>%
     tab_caption('Perfil * Nivel de satisfacción con el proceso de compra')
 as.datatable_widget(tab)
 ```
+
+En cuanto al nivel de satisfacción se puede observar una valoración superior de los entrevistados que utilizaron en canal online, en detrimento de los
+que usaron el canal tradicional de visita a la tienda física.

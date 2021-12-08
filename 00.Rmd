@@ -9,7 +9,6 @@ output:
 knitr::opts_chunk$set(echo = FALSE, warning=FALSE, comment = NA)
 ```
 
-
 ```{r echo = FALSE}
 suppressMessages(library(flexdashboard,quietly =TRUE))
 suppressMessages(library(dplyr,quietly =TRUE))
@@ -128,11 +127,9 @@ gcanal <- hchart(dfcanal, 'bar', hcaes(x=canal, y=entrevistas)) %>%
     hc_plotOptions(series = list(animation = FALSE))
 ```
 
-Datos
-=====================================
+# Datos
 
-Column
--------------------------------------
+## Column
 
 ### Muestra
 
@@ -158,14 +155,13 @@ Column
 
 `r valueBox(duracion, caption = 'duracion minutos', icon = 'fa-clock', color = '#ffaa04')`
 
-Column
--------------------------------------
+## Column
 
 ### **Completas**
 
 `r gtasa1`
 
-### **Parciales**  
+### **Parciales**
 
 `r gtasa2`
 
@@ -173,8 +169,7 @@ Column
 
 `r gtasa3`
 
-Column
-------------------------------------
+## Column
 
 ### **Nº de Entrevistas día**
 
