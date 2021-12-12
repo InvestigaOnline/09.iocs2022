@@ -6,7 +6,7 @@ navbar:
       href: index.html
     - text: "Preliminares"
       menu:
-      - text: "Caso"
+      - text: "Descripción"
         href: caso.html
       - text: "Evolución del proyecto"
         href: "00.html"
