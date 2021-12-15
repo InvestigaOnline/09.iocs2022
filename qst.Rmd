@@ -10,3 +10,10 @@ Para descargar una versión del cuestionario en papel, como instrumento de traba
 
 Para iniciar un _preview_ del cuestionario online, haga clic en el siguiente <a href='https://io.tesintegra.net/html/view/preview.php?pid=IOCS2022' target='_blank'>enlace</a>.
 
+# Base de datos
+
+Desde este <a href="https://caso2022.investigaonline.com/datos.xlsx">enlace</a> puedes descargar la base de datos del estudio. Es un libro de EXCEL con tres hojas:
+
+* Hoja de datos (con códigos numéricos)
+* Hoja de datos con etiquetas
+* Hoja de identificación de variables (Nombre de columna en anteriores hojas, qué preggunta de cuestionario es)-
