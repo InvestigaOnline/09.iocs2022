@@ -46,7 +46,7 @@ gtasa1 <- highchart() %>%
     hc_pane(startAngle = -90,endAngle = 90,background = list(outerRadius = '100%',innerRadius = '60%',shape = 'arc')) %>%
     hc_tooltip(enabled = FALSE) %>%
     hc_yAxis(lineWidth = 0,minorTickWidth = 0,tickAmount = 2,min = 0,max = 100,labels = list(y = 25)) %>%
-    hc_add_series(round(100*(xx/xn),1),dataLabels = list(borderWidth = 0,useHTML = TRUE,style = list(fontSize = '2em'))) %>%
+    hc_add_series(round(100*(xx/xn),1),dataLabels = list(borderWidth = 0,useHTML = TRUE,style = list(fontSize = '2rem'))) %>%
     hc_credits(enabled = TRUE,text = 'InvestigaOnline.com',href = 'https://www.investigaonline.com') %>%
     hc_exporting(enabled = TRUE) %>%
     hc_plotOptions(series = list(animation = FALSE))
@@ -57,7 +57,7 @@ gtasa2 <- highchart() %>%
     hc_pane(startAngle = -90,endAngle = 90,background = list(outerRadius = '100%',innerRadius = '60%',shape = 'arc')) %>%
     hc_tooltip(enabled = FALSE) %>%
     hc_yAxis(lineWidth = 0,minorTickWidth = 0,tickAmount = 2,min = 0,max = 100,labels = list(y = 25)) %>%
-    hc_add_series(round(100*(xy/xn),1),dataLabels = list(borderWidth = 0,useHTML = TRUE,style = list(fontSize = '2em'))) %>%
+    hc_add_series(round(100*(xy/xn),1),dataLabels = list(borderWidth = 0,useHTML = TRUE,style = list(fontSize = '2rem'))) %>%
     hc_credits(enabled = TRUE,text = 'InvestigaOnline.com',href = 'https://www.investigaonline.com') %>%
     hc_exporting(enabled = TRUE) %>%
     hc_plotOptions(series = list(animation = FALSE))
@@ -69,7 +69,7 @@ gtasa3 <- highchart() %>%
     hc_pane(startAngle = -90,endAngle = 90,background = list(outerRadius = '100%',innerRadius = '60%',shape = 'arc')) %>%
     hc_tooltip(enabled = FALSE) %>%
     hc_yAxis(lineWidth = 0,minorTickWidth = 0,tickAmount = 2,min = 0,max = 100,labels = list(y = 25)) %>%
-    hc_add_series(round(100*(xz/xn),1),dataLabels = list(borderWidth = 0,useHTML = TRUE,style = list(fontSize = '2em'))) %>%
+    hc_add_series(round(100*(xz/xn),1),dataLabels = list(borderWidth = 0,useHTML = TRUE,style = list(fontSize = '2rem'))) %>%
     hc_credits(enabled = TRUE,text = 'InvestigaOnline.com',href = 'https://www.investigaonline.com') %>%
     hc_exporting(enabled = TRUE) %>%
     hc_plotOptions(series = list(animation = FALSE))
