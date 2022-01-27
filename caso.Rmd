@@ -1,21 +1,36 @@
 ---
 title: 'Descripción del análisis'
+output: 
+  html_document: 
+    theme: flatly
+    number_sections: yes
+    df_print: kable
+editor_options: 
+  chunk_output_type: console
 ---
 
 # Introducción
 
-El presente trabajo se desarrolla con el objetivo de obtener las diferencias de percepción y satisfacción en el proceso de compre de la población general de entre 16 y 65 años en las tiendas físicas u online en dos de las tres grandes cadenas nacionales de moda joven: TENDAM e INDITEX. Queda fuera del análisis por expreso deseo del cliente el grupo MANGO.
+El presente trabajo se desarrolla con el objetivo de obtener las diferencias de percepción y satisfacción en el proceso de compra de la población de
+entre 16 y 65 años en las tiendas físicas u online en dos de las tres grandes cadenas nacionales de moda joven: TENDAM e INDITEX. Queda fuera del
+análisis por expreso deseo del *cliente final* el grupo MANGO.
 
-El análisis se repetirá 3 veces a lo largo del año (cuatrimestral), en los meses de Marzo, Julio y Noviembre de 2022. Se realiza un primer piloto del mismo a finales de octubre de 2021 y una primera ola a finales de noviembre y principios de diciembre de 2021.
+El análisis se repetirá 3 veces a lo largo de una temporada de negocio: Diciembre, Marzo y Julio. Se realiza un primer piloto del mismo a finales de
+octubre de 2021 y la primera ola a finales de noviembre y principios de diciembre de 2021, completándose (en el futuro) con una nueva oleada en marzo
+de 2022, a comparar con la primera ola de 2021.
 
-El análisis se ha estructurado por objetivos, presentando los resultados más significativos en forma de tabla y/o gráfico. Se presentan finalmente las conclusiones más relevantes. 
+El análisis se ha estructurado por objetivos, presentando los resultados más significativos en forma de tabla y/o gráfico. Se presentan finalmente las
+conclusiones más relevantes. Se establece un dashboard de control que contendrá los resultados más relevantes.
 
-De forma independiente, se establece un dashboard de control que contendrá los resultados más relevantes.
+Dado el carácter académico de la investigación, la muestra será obtenida a través de los contactos de los alumnos de la asignatura de Plan de
+marketing en la Universitat Católica de València y los alumnos de Gestión de Proyectos de Investigación Comercial en el Máster Universitario en
+Marketing e Investigación de Mercados en la Universitat de València. Aproximadamente, se esperan unas 300 entrevistas en cada oleada.
 
-La muestra será obtenida a través del _global access panel_ de CINT, contratando una muestra de 400 individuos para cada ola.
-
-Para el piloto, se ha utilizado una muestra de conveniencia de estudiantes de máster en la Universitat de València. No es tanto el objetivo en este piloto el de establecer las diferencias sino de detectar déficit en el instrumento de medición ofrecido.
+Para el piloto, se ha utilizado una muestra de conveniencia de estudiantes de máster en la Universitat de València. No es tanto el objetivo en este
+piloto el de establecer las diferencias sino de detectar déficit en el instrumento de medición ofrecido.
 
 # Software
 
-Tanto para el dashboard como para el análisis de datos se ha utilizado R software. El informe es entregado en formato HTML. Para las pruebas inferenciales se ha utilizado la prueba Chi<sup>2</sup> y la prueba t para medios en muestras independientes. Los gráficos son exportables como imagen.
+Tanto para el dashboard como para el análisis de datos se ha utilizado R software. El informe es entregado en formato HTML. Para las pruebas
+inferenciales se ha utilizado la prueba Chi<sup>2</sup> y la prueba t para mediAs en muestras independientes. Los gráficos son exportables como
+imagen.

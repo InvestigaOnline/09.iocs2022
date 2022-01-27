@@ -8,14 +8,17 @@ knitr::opts_chunk$set(echo = FALSE)
 
 El siguiente documento presenta el resultado de la codificación de las preguntas abiertas. El procedimiento seguido ha sido el estándar:
 
-* verbatim de los literales
-* creación de claves
-* imputación del código clave a registro
+-   verbatim de los literales
+-   creación de claves
+-   imputación del código clave a registro
 
 El resultado del proceso se muestra en forma de tabla. Cada tabla tiene los campos:
 
-* tipo, identifica si es una clave o un literal
-* antecesor, identifica si es una clave de nivel superior o una subclave de la anterior (representación de _nets_)
-* descripción, literal codificado
-* código / frecuencia, código de la clave o frecuencia del literal según campo _tipo_.
+-   tipo, identifica si es una clave o un literal
+-   antecesor, identifica si es una clave de nivel superior o una subclave de la anterior (representación de *nets*)
+-   descripción, literal codificado
+-   código / frecuencia, código de la clave o frecuencia del literal según campo *tipo*.
 
+#### Resultado
+
+**No hay abiertas**

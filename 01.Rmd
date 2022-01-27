@@ -1,7 +1,12 @@
 ---
 title: "Resultados (01)"
+output: 
+  html_document: 
+    theme: flatly
+    number_sections: yes
+    df_print: kable
 editor_options: 
-  chunk_output_type: inline
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -27,8 +32,8 @@ tab <- data %>%
 as.datatable_widget(tab)
 ```
 
-Calculamos sobre esta grado de satisfacción un indicador del grado de satisfacción, clasificando a los compradores como satisfechos (valoración 9 y
-10) o insatisfechos (valoración 0 a 6). Analizamos el KPI derivado.
+Calculamos sobre esta cuestión un indicador del grado de satisfacción, clasificando a los compradores como satisfechos (valoración 9 y 10) o
+insatisfechos (valoración 0 a 6). Analizamos el KPI derivado.
 
 ```{r echo = FALSE}
 tab <- data %>%
@@ -38,8 +43,7 @@ tab <- data %>%
     tab_stat_cases(label='casos') %>%
     tab_last_hstack() %>%
     tab_cells(KPIP1) %>%
-    tab_stat_mean(label='KPI-P1') %>%
-    tab_last_hstack() %>%
+    tab_stat_mean(label='KPI-P1 [NPS]') %>%
 	tab_pivot() %>%
     tab_caption('Índice de satisfacción con el proceso de compra')
 as.datatable_widget(tab)

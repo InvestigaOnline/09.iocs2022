@@ -6,7 +6,7 @@ output:
     number_sections: yes
     df_print: kable
 editor_options: 
-  chunk_output_type: inline
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}

@@ -1,5 +1,12 @@
 ---
 title: "Resultados (11)"
+output: 
+  html_document: 
+    theme: flatly
+    number_sections: yes
+    df_print: kable
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -40,8 +47,7 @@ tab1 <- data %>%
         na_if(P17_8,gt(10))) %>% 
     tab_stat_mean() %>%
     tab_pivot()
-tab1 <- tab1[,-1]
-tab2 <- as.etable(cbind(tab0,tab1))
+tab2 <- as.etable(cbind(tab0,tab1[,-1]))
 tab2 <- tab2[,-1]
 tab2 <- rename(tab2, Total='#Total cases', Media='#Total')
 tab2$row_labels <- str_replace_all(tab2$row_labels, "#Total\\|", "")
@@ -104,5 +110,3 @@ tab <- data %>%
     tab_caption('Perfil * Valoración de los productos de/en la tienda')
 as.datatable_widget(tab)
 ```
-
-

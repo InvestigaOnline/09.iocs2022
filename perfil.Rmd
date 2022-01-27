@@ -1,11 +1,20 @@
 ---
 title: 'Perfil del target'
+output: 
+  html_document: 
+    theme: flatly
+    number_sections: yes
+    df_print: kable
+editor_options: 
+  chunk_output_type: console
 ---
 
 # Descripción de la muestra
 
-Muestra obtenida con estudiantes Universitat de València (Máster MBA Dirección de Empresas) y posteriormente completado con red de proximidad (contactos sociales) de los alumnos de al asignatura de Plan de Marketing - investigación de Mercados del grdao ADE en la Universidad Católica de Valencia, por lo que el muestreo de conveniencia ha sido el método indicado. Ello nos lleva a una muestra sesgada de individuos, no representativos de la estructura poblacional del universo señalado en la [ficha técnica](https://caso2022.investigaonline.com/ficha.html).
-
+Muestra obtenida con estudiantes Universitat de València (Máster MBA Dirección de Empresas) y posteriormente completado con red de proximidad
+(contactos sociales) de los alumnos de al asignatura de Plan de Marketing - investigación de Mercados del grdao ADE en la Universidad Católica de
+Valencia, por lo que el muestreo de conveniencia ha sido el método indicado. Ello nos lleva a una muestra sesgada de individuos, no representativos de
+la estructura poblacional del universo señalado en la [ficha técnica](https://caso2022.investigaonline.com/ficha.html).
 
 La distribución por edades de los entrevistados ha sido la siguiente:
 
@@ -94,7 +103,7 @@ highchart() %>%
 
 # Screener para obtener perfil deseado
 
-Se comenzó solicitando la colaboración. De los `r `nrow(data.total)` que accedieron al estudio ...
+Se comenzó solicitando la colaboración. De los `r`nrow(data.total)\` que accedieron al estudio ...
 
 ```{r echo = FALSE}
 df <- data.total %>%
@@ -114,7 +123,6 @@ highchart() %>%
 
 Se continuó cuestionando acerca de las compras en los últimos tres meses...
 
-
 ```{r echo = FALSE}
 df <- data.total %>%
 	tab_cells('|'=unvr(mrset_f(R1A_))) %>%
@@ -132,8 +140,8 @@ highchart() %>%
     hc_exporting(enabled=TRUE)
 ```
 
-
-Para continuar analizando quienes habían comprado en los últimos 3 meses en una de las tiendas de TENDAM o INDITEX, grupos de análisis en nuestra investigación.
+Para continuar analizando quienes habían comprado en los últimos 3 meses en una de las tiendas de TENDAM o INDITEX, grupos de análisis en nuestra
+investigación.
 
 ```{r echo = FALSE}
 df <- data.total %>%
@@ -208,7 +216,8 @@ highchart() %>%
     hc_exporting(enabled=TRUE)
 ```
 
-De estas marcas, se buscó indicar dónde había sido la última compra, con el objetivo de determinar aquella marca sobre la que el consumidore realizaría la valoración. Fueron utilizadas para las diferentes valoraciones las siguientes marcas:
+De estas marcas, se buscó indicar dónde había sido la última compra, con el objetivo de determinar aquella marca sobre la que el consumidore
+realizaría la valoración. Fueron utilizadas para las diferentes valoraciones las siguientes marcas:
 
 ```{r echo = FALSE}
 tab <- data %>%

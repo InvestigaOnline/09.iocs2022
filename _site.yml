@@ -1,6 +1,6 @@
-name: "Tendam / Inditex - Caso 2022"
+name: "Tendam-Inditex"
 navbar:
-  title: "Caso 2021-2022"
+  title: "Caso 2022"
   left:
     - text: "Home"
       href: index.html

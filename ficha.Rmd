@@ -1,13 +1,24 @@
 ---
 title: 'Ficha técnica del estudio'
+output: 
+  html_document: 
+    theme: flatly
+    number_sections: yes
+    df_print: kable
+editor_options: 
+  chunk_output_type: console
 ---
 
 # Introducción
-La encuesta fue administrada de forma online. Para ello se utilizó el softwware [Gandia Integra](https://www.tesigandia.com/gandia-integra/) de la empesa [TESI](https://www.tesigandia.com), realizándose el proceso de datos con el [software R](https://www.r-project.org/).
+
+La encuesta fue administrada de forma online. Para ello se utilizó el softwware [Gandia Integra](https://www.tesigandia.com/gandia-integra/) de la
+empesa [TESI](https://www.tesigandia.com), realizándose el proceso de datos con el [software R](https://www.r-project.org/).
 
 # Ficha técnica
 
-El enlace fue visitado por `r xw`, de los que `r xy` iniciaron la entrevista no acabando la misma, `r xz` fueron rechazados por los diversos controles en el _screening_ del proyecto, y por tanto, hubo `r xx` participantes que la consiguieron acabar. Sobre una muestra de `r xn` entrevistas, hay un ratio de respuesta de `r round(tasa,1)` %. 
+El enlace fue visitado por `r xw`, de los que `r xy` iniciaron la entrevista no acabando la misma, `r xz` fueron rechazados por los diversos controles
+en el *screening* del proyecto, y por tanto, hubo `r xx` participantes que la consiguieron acabar. Sobre una muestra de `r xn` entrevistas, hay un
+ratio de respuesta de `r round(tasa,1)` %.
 
 ```{r echo = FALSE}
 #xx finalizadas

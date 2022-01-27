@@ -1,12 +1,20 @@
 ---
 title: "Resultados (05)"
+output: 
+  html_document: 
+    theme: flatly
+    number_sections: yes
+    df_print: kable
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-El objetivo 05 evaluaba el _gap de servicio_ recibido, así como una solicitud de valoración del mismo. Procedemos de la misma forma que en los objetivos anteriores.
+El objetivo 05 evaluaba el *gap de servicio* recibido, así como una solicitud de valoración del mismo. Procedemos de la misma forma que en los
+objetivos anteriores.
 
 En primer lugar, se solicitaba una valoración sobre si el servicio ha sido en comparación con lo esperado, mejor igual o peor.
 

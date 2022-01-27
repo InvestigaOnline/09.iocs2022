@@ -1,107 +1,144 @@
 ---
 title: 'Objetivos y necesidades de información'
+output: 
+  html_document: 
+    theme: flatly
+    number_sections: yes
+    df_print: kable
+editor_options: 
+  chunk_output_type: console
 ---
 
 # Descripción del problema de investigación
 
-Se ha solicitado realizar un estudio acerca de las percepciones y satisfacción en el proceso de compra tanto en tienda física como en tienda online de los usuarios de las marcas de los grupos comerciales del sector textil TENDAM e INDITEX.
+Se ha solicitado realizar un estudio acerca de las percepciones y satisfacción en el proceso de compra tanto en tienda física como en tienda online de
+los usuarios de las marcas de los grupos comerciales del sector textil TENDAM e INDITEX.
 
-Para ellos tras revisar un conjunto de fuentes secundarias que nos permitieron acercarnos al problema de investigación, se decidió en conjunto con el cliente que los objetivos de la investigación estuvieran limitados a los aquí bajo descritos.
+Para ellos tras revisar un conjunto de fuentes secundarias que nos permitieron acercarnos al problema de investigación, se decidió en conjunto con el
+cliente que los objetivos de la investigación estuvieran limitados a los aquí bajo descritos.
 
 # Resumen de objetivos
 
 Para poder abordar el problema del cliente, se decide trabajar sobre estos objetivos:
 
-1. TIENDA ONLINE
-    1. SATISFACCIÓN GLOBAL
-    1. RECOMENDACIÓN
-    1. ELEMENTOS EN QUE SE FUNDAMENTA SATISFACCIÓN / INSATISFACCIÓN
-    1. PROBABILIDAD DE RECOMPRA
-    1. VALORACIÓN OBJETIVA DEL SERVICIO RECIBIDO EN ÚLTIMA TRANSACCIÓN
-    1. VALORACIÓN ATRIBUTOS GENERALES DE TIENDA ONLINE
-    1. VALORAR ATENCIÓN AL CLIENTE ONLINE
-    1. VALORAR EL PROCESO DE PAGO
-    1. VALORAR ENTREGA ENVÍO
-    1. VALORAR EL PRODUCTO EN LA TIENDA
-2. TIENDA FÍSICA
-    1. SATISFACCIÓN GLOBAL 
-    1. RECOMENDACIÓN
-    1. ELEMENTOS EN QUE SE FUNDAMENTA SATISFACCIÓN / INSATISFACCIÓN
-    1. PROBABILIDAD DE RECOMPRA
-    1. VALORACIÓN OBJETIVA DEL SERVICIO RECIBIDO EN ÚLTIMA TRANSACCIÓN
-    1. VALORACIÓN ATRIBUTOS GENERALES DE TIENDA FÍSICA
-    1. VALORAR ATENCIÓN AL CLIENTE FÍSICA
-    1. VALORAR EL PROCESO DE PAGO
-    1. VALORAR  ENTREGA CAJA
-    1. VALORAR EL PRODUCTO EN LA TIENDA
-    
-Puede observarse que el listado de objetivos es prácticamente común en ambos casos y es por ello que se trataron conjuntamente en la muestra, eso sí diferenciando si la última compra había sido de tipo online o física.
+1.  TIENDA ONLINE
+
+    1.  SATISFACCIÓN GLOBAL
+    2.  RECOMENDACIÓN
+    3.  ELEMENTOS EN QUE SE FUNDAMENTA SATISFACCIÓN / INSATISFACCIÓN
+    4.  PROBABILIDAD DE RECOMPRA
+    5.  VALORACIÓN OBJETIVA DEL SERVICIO RECIBIDO EN ÚLTIMA TRANSACCIÓN
+    6.  VALORACIÓN ATRIBUTOS GENERALES DE **TIENDA ONLINE**
+    7.  VALORAR ATENCIÓN AL **CLIENTE ONLINE**
+    8.  VALORAR EL PROCESO DE PAGO
+    9.  VALORAR ENTREGA **ENVÍO**
+    10. VALORAR EL PRODUCTO EN LA TIENDA
+
+2.  TIENDA FÍSICA
+
+    1.  SATISFACCIÓN GLOBAL
+    2.  RECOMENDACIÓN
+    3.  ELEMENTOS EN QUE SE FUNDAMENTA SATISFACCIÓN / INSATISFACCIÓN
+    4.  PROBABILIDAD DE RECOMPRA
+    5.  VALORACIÓN OBJETIVA DEL SERVICIO RECIBIDO EN ÚLTIMA TRANSACCIÓN
+    6.  VALORACIÓN ATRIBUTOS GENERALES DE **TIENDA FÍSICA**
+    7.  VALORAR ATENCIÓN AL **CLIENTE TIENDA FÍSICA**
+    8.  VALORAR EL PROCESO DE PAGO
+    9.  VALORAR ENTREGA **CAJA**
+    10. VALORAR EL PRODUCTO EN LA TIENDA
+
+Puede observarse que el listado de objetivos es prácticamente común en ambos casos y es por ello que se trataron conjuntamente en la muestra, eso sí
+diferenciando si la última compra había sido de tipo online o física.
 
 # Necesidades de información por objetivo
 
-Tras desarrollar cada uno de ellos, se determinan las siguientes necesidades de información que determinarán con su desarrollo el instrumento de medición.
+Tras desarrollar cada uno de ellos, se determinan las siguientes necesidades de información que determinarán con su desarrollo el instrumento de
+medición.
 
-0. SCREENING PARA COMPRADORES DE TENDAM O INDITEX Y DETERMINACIÓN DE ONLINE O FÍSICA
-1. SATISFACCIÓN  CON MARCA / TIENDA
-    + Valora satisfacción global con la tienda
-2. RECOMENDACIÓN
-    + Probabilidad de recomendación la tienda de la marca
-3. LIKES Y DISLIKES CERRADOS
-    + Web, 
-    + Tienda, 
-    + Atención del personal, 
-    + Producto, 
-    + Proceso de compra, 
-    + Proceso de devolución, 
-    + Proceso de entrega,
-    + Servicio de atención al cliente 
-4. PROBABILIDAD DE RECOMPRA
-    + Sondear la posibilidad futura de volver a comprar
-5. VALORACIÓN DEL SERVICIO RECIBIDO
-    + Valora satisfacción global con el servicio
-6. VALORACIÓN DE LA TIENDA
-    + Aspecto estético / gráfico (W.)
-    + La Web es intuitiva y fácil de navegar (W.)
-    + Las propuestas o alternativas que te ofrece la Web para complementar tu compra (w.)
-    + Visibilidad de estas propuestas en la página (W.)
-    + Los escaparates resultan atractivos, coherentes con la marca e invitan a entrar a la tienda (F.)
-    + El orden de la tienda (F.)
-    + Ambiente agradable en cuanto al volumen de la música y ausencia de ruidos (F)
-    + Los vendedores estaban uniformados (F.)
-    + Vendedores con una actitud adecuada para atender a los clientes (F.)
-7. USO DE PROBADORES (F.)
-    + Limpieza
-    + Orden
-    + Control
-8. EVALUACIÓN DE LA ATENCIÓN AL CLIENTE
-    + Ayuda del servicio de atención al cliente
-    + Facilidad localización
-    + Canal usado (teléfono, chat …)
-    + Tiempo transcurrido en ser atendido
-    + Conocimiento y profesionalidad del agente
-    + Amabilidad del agente
-    + Pro actividad del agente
-    + ¿La consulta quedó resuelta en el primer contacto?
-    + Valoración del plazo de gestión consulta/solicitud/petición
-    + Valoración de la resolución de la consulta/solicitud/petición
-    + Satisfacción con el servicio de atención al cliente
-9. EVALUACIÓN ENTREGA PEDIDO ONLINE/CAJA (Valorar los diferentes aspectos del proceso de entrega del pedido de la tienda)
-    + Cumplimiento de los tiempos de entrega
-    + Presentación /estado del paquete
-    + Valoración de espera en caja
-    + ¿El pedido se ha entregado correctamente al destinatario del mismo? (online)
-    + ¿Qué deficiencia presentaba? (mala puntuación en presentación)
+0.  SCREENING PARA COMPRADORES DE TENDAM O INDITEX Y DETERMINACIÓN DE ONLINE O FÍSICA
+
+1.  SATISFACCIÓN CON MARCA / TIENDA
+
+    -   Valora satisfacción global con la tienda
+
+2.  RECOMENDACIÓN
+
+    -   Probabilidad de recomendación la tienda de la marca
+
+3.  LIKES Y DISLIKES CERRADOS
+
+    -   Web,
+    -   Tienda,
+    -   Atención del personal,
+    -   Producto,
+    -   Proceso de compra,
+    -   Proceso de devolución,
+    -   Proceso de entrega,
+    -   Servicio de atención al cliente
+
+4.  PROBABILIDAD DE RECOMPRA
+
+    -   Sondear la posibilidad futura de volver a comprar
+
+5.  VALORACIÓN DEL SERVICIO RECIBIDO
+
+    -   Valora satisfacción global con el servicio
+
+6.  VALORACIÓN DE LA TIENDA
+
+    -   Aspecto estético / gráfico (W.)
+    -   La Web es intuitiva y fácil de navegar (W.)
+    -   Las propuestas o alternativas que te ofrece la Web para complementar tu compra (w.)
+    -   Visibilidad de estas propuestas en la página (W.)
+    -   Los escaparates resultan atractivos, coherentes con la marca e invitan a entrar a la tienda (F.)
+    -   El orden de la tienda (F.)
+    -   Ambiente agradable en cuanto al volumen de la música y ausencia de ruidos (F)
+    -   Los vendedores estaban uniformados (F.)
+    -   Vendedores con una actitud adecuada para atender a los clientes (F.)
+
+7.  USO DE PROBADORES (F.)
+
+    -   Limpieza
+    -   Orden
+    -   Control
+
+8.  EVALUACIÓN DE LA ATENCIÓN AL CLIENTE
+
+    -   Ayuda del servicio de atención al cliente
+    -   Facilidad localización
+    -   Canal usado (teléfono, chat ...)
+    -   Tiempo transcurrido en ser atendido
+    -   Conocimiento y profesionalidad del agente
+    -   Amabilidad del agente
+    -   Pro actividad del agente
+    -   ¿La consulta quedó resuelta en el primer contacto?
+    -   Valoración del plazo de gestión consulta/solicitud/petición
+    -   Valoración de la resolución de la consulta/solicitud/petición
+    -   Satisfacción con el servicio de atención al cliente
+
+9.  EVALUACIÓN ENTREGA PEDIDO ONLINE/CAJA (Valorar los diferentes aspectos del proceso de entrega del pedido de la tienda)
+
+    -   Cumplimiento de los tiempos de entrega
+    -   Presentación /estado del paquete
+    -   Valoración de espera en caja
+    -   ¿El pedido se ha entregado correctamente al destinatario del mismo? (online)
+    -   ¿Qué deficiencia presentaba? (mala puntuación en presentación)
+
 10. EVALUACIÓN PROCESO DE PAGO, Valorar los diferentes aspectos del proceso de pago de la tienda
-    + Rapidez y sencillez en el proceso de pago
-    + Formas de pago disponibles
-    + Gastos de envío asociados a la entrega del pedido
-11. EVALUACIÓN DEL PRODUCTO EN LA TIENDA. (Valora por favor los siguientes aspectos referidos a los productos de la tienda) 
-       + Presentación de los productos
-       + Presentación de la descripción de los productos
-       + Presentación de los detalles de los productos (largo, ancho, composición)
-       + Disponibilidad de tallas
-       + Calidad de los productos
-       + Diseño de los productos
-       + Precio de los productos
-       + Promociones ofrecidas
+
+    -   Rapidez y sencillez en el proceso de pago
+    -   Formas de pago disponibles
+    -   Gastos de envío asociados a la entrega del pedido
+
+11. EVALUACIÓN DEL PRODUCTO EN LA TIENDA. (Valora por favor los siguientes aspectos referidos a los productos de la tienda)
+
+    -   Presentación de los productos
+    -   Presentación de la descripción de los productos
+    -   Presentación de los detalles de los productos (largo, ancho, composición)
+    -   Disponibilidad de tallas
+    -   Calidad de los productos
+    -   Diseño de los productos
+    -   Precio de los productos
+    -   Promociones ofrecidas
+
 12. PERFIL Y DATOS DE CLASIFICACIÓN BÁSICOS

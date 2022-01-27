@@ -1,11 +1,18 @@
 ---
-title: 'Tendam vs Inditex'
+title: 'Tendam vs Inditex | Online vs Física'
 subtitle: 'Satisfacción Proceso de Compra<hr>'
 author: 'Roberto Gil-Saura'
 date: 'Última actualización en `r Sys.time()`'
+output: 
+  html_document: 
+    theme: flatly
+    number_sections: yes
+    df_print: kable
+editor_options: 
+  chunk_output_type: console
 ---
 
----
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Introducción
 
@@ -15,6 +22,8 @@ Documento redactado con fines académicos, en desarrollo y no revisado.
 
 El presente informe refleja la situación real del caso en la última fecha de actualización.
 
----
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
-<div style="text-align: center;">![](img.jpg)</div>
+::: {style="text-align: center;"}
+![](img.png)
+:::

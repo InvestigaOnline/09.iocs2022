@@ -1,5 +1,12 @@
 ---
 title: "Resultados (09)"
+output: 
+  html_document: 
+    theme: flatly
+    number_sections: yes
+    df_print: kable
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -88,5 +95,3 @@ tab <- data %>%
     tab_caption('Perfil * Valoración del proceso de entrega del pedido')
 as.datatable_widget(tab)
 ```
-
-
