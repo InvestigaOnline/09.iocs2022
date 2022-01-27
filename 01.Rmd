@@ -91,4 +91,14 @@ as.datatable_widget(tab)
 ```
 
 En cuanto al nivel de satisfacción se puede observar una valoración superior de los entrevistados que utilizaron en canal online, en detrimento de los
-que usaron el canal tradicional de visita a la tienda física.
+que usaron el canal tradicional de visita a la tienda física. Sin embargo esa diferencia no es significativa como puede observarse en la tabla[^1].
+
+[^1]: Como explicación para la significación indicar que en esta tabla y en sucesivas, se realiza una prueba T de significación donde se compara entre
+    las medias de las filas (o columnas, identificadas por letras) Una letra presente en una celda donde se ubican las medias, indica que la media en
+    esa celda donde aparece la letra la letra es significativamente diferente de aquellas otras medias en filas (o columnas) identificadas por la
+    letra en la celda.
+
+    La comparación siempre se realiza entre las medias de la misma variable, por eso en cada variable (SEXO, EDAD...), las letras comienzan por A....
+    salvo que se indique lo contrario, nunca se harán comparaciones entre filas (o columnas) de otras variables.
+
+    En este caso la prueba se hace entre las medias en filas de cada variable.
