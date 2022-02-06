@@ -7,6 +7,7 @@ output:
 
 ```{r echo = FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning=FALSE, comment = NA)
+
 ```
 
 ```{r echo = FALSE}
@@ -20,6 +21,7 @@ suppressMessages(library(kableExtra,quietly =TRUE))
 suppressMessages(library(psych,quietly =TRUE))
 suppressMessages(library(wordcloud,quietly =TRUE))
 suppressMessages(library(readr,quietly =TRUE))
+options(highcharter.theme = hc_theme_economist(tooltip = list(valueDecimals = 1)))
 data.total <- suppressMessages(read_spss('~/R/r-projects/09.iocs2022/Datos_IOCS2022.sav'))
 data.total <- filter(data.total, DURACION > 0)
 data <- data.total

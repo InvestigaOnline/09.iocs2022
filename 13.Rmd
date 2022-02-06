@@ -6,25 +6,20 @@ output:
     number_sections: yes
     df_print: kable
 editor_options: 
-  chunk_output_type: console
+  chunk_output_type: inline
 ---
 
 # Generales
 
 Tras analizar los resultados alcanzados, exponemos las siguientes conclusiones:
 
--   ...
--   ...
-
 ## Objetivo 1
 
--   ...
--   ...
+- El grado de satisfacción presenta un amplio margen de mejora, aunque la media se ubica en los valores altos de la escala en compradores considerados neutrales. El indicador calculado es de 25.2. Esto indica que aun estando satisfechos los compradores, cualquiera de las dos compañías debe trabajar aquellos aspectos que lleven a un cliente a sólo pensar en 9 y 10 como puntuaciones del proceso de compra, lo que situaría el indicador en valores cercanos a 100.
 
 ## Objetivo 2
 
--   ...
--   ...
+- El indicador de recomendación, siendo un poco mayor que el indicador de satisfacción se ubica en 28.8. Por lo que podemos extender la conclusión anterior al objetivo 01. Es importante detectar donde se produce esa _fuga de valoración_ y tratar de entender por qué no se valora con 9 y 10. Un estudio más a fondo de los _likes_ y _dislikes_ de ese proceso nos podría llevar a entender qué sucede.
 
 ## Objetivo 3
 

@@ -6,16 +6,14 @@ output:
     number_sections: yes
     df_print: kable
 editor_options: 
-  chunk_output_type: console
+  chunk_output_type: inline
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-El primer objetivo estaba relacionado con la satisfacción declarada con el proceso de compra. Primera pregunta del instrumento de medición, tras el
-*screening* tratando de eliminar sesgo que el propio instrumento de medición pudiera introducir al ser administrado. La medición del objeto
-*satisfacción* se realiza con una escala de 0 a 10, donde el 0 era muy insatisfecho y el 10 muy satisfecho.
+El primer objetivo estaba relacionado con la satisfacción declarada con el proceso de compra. Primera pregunta del instrumento de medición, tras el *screening* tratando de eliminar sesgo que el propio instrumento de medición pudiera introducir al ser administrado. La medición del objeto *satisfacción* se realiza con una escala de 0 a 10, donde el 0 era muy insatisfecho y el 10 muy satisfecho.
 
 ```{r echo = FALSE}
 tab <- data %>%
@@ -31,9 +29,9 @@ tab <- data %>%
     tab_caption('Nivel de satisfacción con el proceso de compra')
 as.datatable_widget(tab)
 ```
+Puede observarse en los resultados que el grado de satisfacción aparentemente es alto, pero véase que el resultado se obtiene de forma general y sin perfilar por grupos.
 
-Calculamos sobre esta cuestión un indicador del grado de satisfacción, clasificando a los compradores como satisfechos (valoración 9 y 10) o
-insatisfechos (valoración 0 a 6). Analizamos el KPI derivado.
+Para tener una resultado más clarificador aplicamos la regla de **Top2Box** y reclasificamos este índice en tres grupos. Calculamos sobre esta cuestión un indicador del grado de satisfacción, clasificando a los compradores como satisfechos (valoración 9 y 10) o insatisfechos (valoración 0 a 6). Analizamos el KPI derivado.
 
 ```{r echo = FALSE}
 tab <- data %>%
@@ -43,7 +41,7 @@ tab <- data %>%
     tab_stat_cases(label='casos') %>%
     tab_last_hstack() %>%
     tab_cells(KPIP1) %>%
-    tab_stat_mean(label='KPI-P1 [NPS]') %>%
+    tab_stat_mean(label='KPI-P1 [Satisfechos-Insatisfechos]') %>%
 	tab_pivot() %>%
     tab_caption('Índice de satisfacción con el proceso de compra')
 as.datatable_widget(tab)
@@ -64,7 +62,7 @@ highchart() %>%
     hc_chart(type = 'pie', polar = FALSE, inverted = FALSE) %>% 
     hc_xAxis(categories = df$name) %>%
     hc_add_series(df,name = "Valor", showInLegend = FALSE, innerSize='75%',dataLabels = list(format="{point.name}<br>({point.y}%)"))%>%
-    hc_tooltip(useHTML = TRUE,style = list(fontSize = "30px"),headerFormat = "",pointFormat = paste("<br><div style='text-align: center;'>Índice <b><br>",round(mean(data$KPIP1, na.rm = TRUE), 1),"</div>"),
+    hc_tooltip(useHTML = TRUE,style = list(fontSize = "30px"),headerFormat = "",pointFormat = paste("<br><div style='text-align: center;'>KPI-P1 <b><br>",round(mean(data$KPIP1, na.rm = TRUE), 1),"</div>"),
                positioner = JS(
                   "function () {
                     xp =  this.chart.chartWidth/2 - this.label.width/2
@@ -75,8 +73,7 @@ highchart() %>%
     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
     hc_exporting(enabled=TRUE)
 ```
-
-Si distribuimos esa satisfacción por sexo / edad / canal / grupo los resultados con los siguientes:
+Si estos resultados los distribuimos por sexo / edad / canal / cadena, los resultados con los siguientesEn cuanto al nivel de satisfacción se puede observar una valoración superior de los entrevistados que utilizaron en canal online, en detrimento de los que usaron el canal tradicional de visita a la tienda física. Sin embargo esa diferencia no es significativa como puede observarse en la tabla inferior[^1]. No se detectan diferencias significativas entre los perfiles determinados. 
 
 ```{r echo = FALSE}
 tab <- data %>%
@@ -89,16 +86,17 @@ tab <- data %>%
     tab_caption('Perfil * Nivel de satisfacción con el proceso de compra')
 as.datatable_widget(tab)
 ```
+Hemos creído interesante obtener las medias anidando el canal y la cadena, por ver si se producían estas diferencias y como se puede observar en la tabla inferior estas diferencias no se han producido. Es por ello que esta combinación no se ha seguido utilizando yse han tratado por separado los caneles y las cadenas en todas las tablas.
 
-En cuanto al nivel de satisfacción se puede observar una valoración superior de los entrevistados que utilizaron en canal online, en detrimento de los
-que usaron el canal tradicional de visita a la tienda física. Sin embargo esa diferencia no es significativa como puede observarse en la tabla[^1].
-
-[^1]: Como explicación para la significación indicar que en esta tabla y en sucesivas, se realiza una prueba T de significación donde se compara entre
-    las medias de las filas (o columnas, identificadas por letras) Una letra presente en una celda donde se ubican las medias, indica que la media en
-    esa celda donde aparece la letra la letra es significativamente diferente de aquellas otras medias en filas (o columnas) identificadas por la
-    letra en la celda.
-
-    La comparación siempre se realiza entre las medias de la misma variable, por eso en cada variable (SEXO, EDAD...), las letras comienzan por A....
-    salvo que se indique lo contrario, nunca se harán comparaciones entre filas (o columnas) de otras variables.
-
-    En este caso la prueba se hace entre las medias en filas de cada variable.
+```{r echo = FALSE}
+tab <- data %>%
+    tab_cols(total(),R1C %nest% R1D) %>%
+    tab_cells(na_if(P1, gt(10))) %>%
+    tab_stat_mean_sd_n() %>%
+    tab_last_sig_means() %>%
+	tab_pivot() %>%
+    t() %>%
+    tab_caption('Perfil * Nivel de satisfacción con el proceso de compra')
+as.datatable_widget(tab)
+```
+[^1]: Como explicación para la significación indicar que en esta tabla y en sucesivas, se realiza una prueba T de significación donde se compara entre las medias de las filas (o columnas, identificadas por letras) Una letra presente en una celda donde se ubican las medias, indica que la media en     esa celda donde aparece la letra la letra es significativamente diferente de aquellas otras medias en filas (o columnas) identificadas por la letra en la celda. La comparación siempre se realiza entre las medias de la misma variable, por eso en cada variable (SEXO, EDAD...), las letras comienzan por A; salvo que se indique lo contrario, nunca se harán comparaciones entre filas (o columnas) de otras variables. En este caso, la prueba se hace entre las medias en filas de cada variable.

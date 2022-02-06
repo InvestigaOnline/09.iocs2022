@@ -6,16 +6,14 @@ output:
     number_sections: yes
     df_print: kable
 editor_options: 
-  chunk_output_type: console
+  chunk_output_type: inline
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-El objetivo 04 estaba relacionado con la probabilidad de recompra en la tienda física u online tras haber cumplido con el ciclo de la compra. Se
-utilizaba para ello una escala de valoración de la probabilidad de recompra donde el 0 era "no volvería a comprar con toda seguridad" en la tienda y
-el 10, "volvería a comprar con toda seguridad".
+El objetivo 04 estaba relacionado con la probabilidad de recompra en la tienda física u online tras haber cumplido con el ciclo de la compra. Se utilizaba para ello una escala de valoración de la probabilidad de recompra donde el 0 era "no volvería a comprar con toda seguridad" en la tienda y el 10, "volvería a comprar con toda seguridad".
 
 ```{r echo = FALSE}
 tab <- data %>%
@@ -25,7 +23,7 @@ tab <- data %>%
     tab_stat_cases(label='casos') %>%
     tab_last_hstack() %>%
     tab_cells(na_if(P4, gt(10))) %>%
-    tab_stat_mean(label='Media de casos') %>%
+    tab_stat_mean(label='Media') %>%
     tab_pivot() %>%
     t() %>%
     tab_caption('Probabilidad de recompra en la tienda')
