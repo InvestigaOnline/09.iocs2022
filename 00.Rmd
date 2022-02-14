@@ -21,7 +21,7 @@ suppressMessages(library(kableExtra,quietly =TRUE))
 suppressMessages(library(psych,quietly =TRUE))
 suppressMessages(library(wordcloud,quietly =TRUE))
 suppressMessages(library(readr,quietly =TRUE))
-options(highcharter.theme = hc_theme_economist(tooltip = list(valueDecimals = 1)))
+options(highcharter.theme = hc_theme_economist(tooltip = list(valueDecimals = 1), colors = c("#b2d8d8","#66b2b2","#008080","#006666","#004c4c","#a3c1ad","#a0d6b4","#5f9ea0","#317873","#49796b","#005073","#107dac","#189ad3","#1ebbd7","#71c7ec","#eec1ad","#dbac98","#d29985","#c98276","#e35d6a","#e8f4ea","#e0f0e3","#d2e7d6","#c8e1cc","#b8d8be")))
 data.total <- suppressMessages(read_spss('~/R/r-projects/09.iocs2022/Datos_IOCS2022.sav'))
 data.total <- filter(data.total, DURACION > 0)
 data <- data.total
@@ -184,6 +184,5 @@ gcanal <- hchart(dfcanal, 'bar', hcaes(x=canal, y=entrevistas)) %>%
 ```{r echo=FALSE}
 set.seed(311265)
 data <- suppressMessages(read_spss('~/R/r-projects/09.iocs2022/Datos_IOCS2022.sav'))
-data <- data %>%  where(ESTADO %in% c(1,5,6,9))
-options(highcharter.theme = hc_theme_bloom(tooltip = list(valueDecimals = 1), colors = c("#b2d8d8","#66b2b2","#008080","#006666","#004c4c","#a3c1ad","#a0d6b4","#5f9ea0","#317873","#49796b","#005073","#107dac","#189ad3","#1ebbd7","#71c7ec","#eec1ad","#dbac98","#d29985","#c98276","#e35d6a","#e8f4ea","#e0f0e3","#d2e7d6","#c8e1cc","#b8d8be")))
+data <- data %>%  rows(ESTADO %in% c(1,5,6,9))
 ```
