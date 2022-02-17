@@ -13,6 +13,8 @@ editor_options:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+### (10) EVALUACIÓN PROCESO DE PAGO
+
 El objetivo 10, nos llevaba a conocer la valoración de los diferentes aspectos del proceso de pago del pedido en/de nuestra tienda.
 
 ```{r echo=FALSE, comment=NA}

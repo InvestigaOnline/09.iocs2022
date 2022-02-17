@@ -9,6 +9,14 @@ editor_options:
   chunk_output_type: inline
 ---
 
+### OTROS ANÁLISIS
+
+En la búsqueda de patrones, creemos oportuno probar la existencia de grupos 
+diferenciados a partir de los indicadores básicos trabajados. Se trabaja 
+únicamente con los indicadores comunes a todos los entrevistados sin diferenciación, 
+P1, P2, P4, P5 y P17.
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 library(dplyr)
@@ -16,7 +24,7 @@ suppressMessages(library(expss))
 suppressMessages(library(DT))
 suppressMessages(library(NbClust))
 
-data01 <- subset(data, select = c(REGISTRO, P1,P2,P4, P5B, P17_1,P17_4,P17_5,P17_6,P17_7,P17_8))
+data01 <- subset(data, select = c(REGISTRO, KPIP1,KPIP2,KPIP4,KPIP5, KPIP17))
 mh <- round(mahalanobis(data01[,-1], colMeans(data01[,-1]), cov(data01[,-1])),5)
 pmh <- round(pchisq(mh, df=11, lower.tail=FALSE),5)
 data01 <- cbind(data01, mh,pmh)
@@ -29,11 +37,9 @@ Se ha/n eliminado `r nrow(data03)` outlier/s. Se muestran su datos más signific
 
 `r datatable(data03[,c(1,12,13)])`
 
-# Clúster jerárquico
+### Conocer nº óptimo de grupos
 
-## Cálculo
-
-Realizamos el cluster jerárquico y listamos sus resultados. Nótese en la agenda de casos, que un número negativo significa referencia al caso original, mientras que un número positivo indica una referencia un grupo creado en el paso indicado por el número
+Realizamos el análisis y listamos sus resultados. Nótese en la agenda de casos, que un número negativo significa referencia al caso original, mientras que un número positivo indica una referencia un grupo creado en el paso indicado por el número
 
 ```{r fig.width=16, fig.height=9}
 #calculo las distancias (package stats)

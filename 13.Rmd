@@ -9,6 +9,8 @@ editor_options:
   chunk_output_type: inline
 ---
 
+> INCOMPLETO
+
 # Generales
 
 Tras analizar los resultados alcanzados, exponemos las siguientes conclusiones:

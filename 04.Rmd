@@ -13,6 +13,8 @@ editor_options:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+### (4) PROBABILIDAD DE RECOMPRA
+
 El objetivo 04 estaba relacionado con la probabilidad de recompra en la tienda física u online tras haber cumplido con el ciclo de la compra. Se utilizaba para ello una escala de valoración de la probabilidad de recompra donde el 0 era "no volvería a comprar con toda seguridad" en la tienda y el 10, "volvería a comprar con toda seguridad".
 
 ```{r echo = FALSE}

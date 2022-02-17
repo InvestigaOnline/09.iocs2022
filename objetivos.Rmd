@@ -57,88 +57,95 @@ medición.
 
 0.  SCREENING PARA COMPRADORES DE TENDAM O INDITEX Y DETERMINACIÓN DE ONLINE O FÍSICA
 
+    - Compra últimos tres meses en tiendas habituales
+    - Compra en tiendas del grupo (la última, la más reciente)
+    - Canal de compra (última compra)
+    - Sexo
+    - Edad
+
 1.  SATISFACCIÓN CON MARCA / TIENDA
 
-    -   Valora satisfacción global con la tienda
+    - Valoración de la satisfacción global con la tienda (0-10)
 
 2.  RECOMENDACIÓN
 
-    -   Probabilidad de recomendación la tienda de la marca
+    - Probabilidad de recomendación la tienda de la marca (0-10)
 
-3.  LIKES Y DISLIKES CERRADOS
+3.  LIKES Y DISLIKES CERRADOS (elementos de mención)
 
-    -   Web,
-    -   Tienda,
-    -   Atención del personal,
-    -   Producto,
-    -   Proceso de compra,
-    -   Proceso de devolución,
-    -   Proceso de entrega,
-    -   Servicio de atención al cliente
+    - Web,
+    - Tienda,
+    - Atención del personal,
+    - Producto,
+    - Proceso de compra,
+    - Proceso de devolución,
+    - Proceso de entrega,
+    - Servicio de atención al cliente
 
 4.  PROBABILIDAD DE RECOMPRA
 
-    -   Sondear la posibilidad futura de volver a comprar
+    - Sondear la posibilidad futura de volver a comprar, acorde con satisfacción y recomendación
 
 5.  VALORACIÓN DEL SERVICIO RECIBIDO
 
-    -   Valora satisfacción global con el servicio
+    - Valoración sobre expectativa de servicio
+    - Valoración global sobre el servicio recibido
 
-6.  VALORACIÓN DE LA TIENDA
+6.  VALORACIÓN DE LA TIENDA (ONLINE [W], FÍSICA  [F])
 
-    -   Aspecto estético / gráfico (W.)
-    -   La Web es intuitiva y fácil de navegar (W.)
-    -   Las propuestas o alternativas que te ofrece la Web para complementar tu compra (w.)
-    -   Visibilidad de estas propuestas en la página (W.)
-    -   Los escaparates resultan atractivos, coherentes con la marca e invitan a entrar a la tienda (F.)
-    -   El orden de la tienda (F.)
-    -   Ambiente agradable en cuanto al volumen de la música y ausencia de ruidos (F)
-    -   Los vendedores estaban uniformados (F.)
-    -   Vendedores con una actitud adecuada para atender a los clientes (F.)
+    - Aspecto estético / gráfico (W.)
+    - La Web es intuitiva y fácil de navegar (W.)
+    - Las propuestas o alternativas que te ofrece la Web para complementar tu compra (w.)
+    - Visibilidad de estas propuestas en la página (W.)
+    - Los escaparates resultan atractivos, coherentes con la marca e invitan a entrar a la tienda (F.)
+    - El orden de la tienda (F.)
+    - Ambiente agradable en cuanto al volumen de la música y ausencia de ruidos (F)
+    - Los vendedores estaban uniformados (F.)
+    - Actitud de los vendedores para atender a los clientes (F.)
 
-7.  USO DE PROBADORES (F.)
+7.  USO DE PROBADORES (F)
 
-    -   Limpieza
-    -   Orden
-    -   Control
+    - Limpieza y conservación
+    - Orden (sin prendas)
+    - Control de prendas de acceso
 
 8.  EVALUACIÓN DE LA ATENCIÓN AL CLIENTE
 
-    -   Ayuda del servicio de atención al cliente
-    -   Facilidad localización
-    -   Canal usado (teléfono, chat ...)
-    -   Tiempo transcurrido en ser atendido
-    -   Conocimiento y profesionalidad del agente
-    -   Amabilidad del agente
-    -   Pro actividad del agente
-    -   ¿La consulta quedó resuelta en el primer contacto?
-    -   Valoración del plazo de gestión consulta/solicitud/petición
-    -   Valoración de la resolución de la consulta/solicitud/petición
-    -   Satisfacción con el servicio de atención al cliente
+    - Ayuda del servicio de atención al cliente
+    - Facilidad localización en web o en tienda de su ubicación
+    - Canal usado (teléfono, chat ...) para el contacto
+    - Tiempo transcurrido en ser atendido
+    - Conocimiento y profesionalidad del agente que atendió
+    - Amabilidad del agente
+    - Pro actividad del agente
+    - ¿La consulta quedó resuelta en el primer contacto?
+    - Valoración del plazo de gestión consulta/solicitud/petición
+    - Valoración de la resolución de la consulta/solicitud/petición
+    - Satisfacción con el servicio de atención al cliente
 
-9.  EVALUACIÓN ENTREGA PEDIDO ONLINE/CAJA (Valorar los diferentes aspectos del proceso de entrega del pedido de la tienda)
+9.  EVALUACIÓN ENTREGA PEDIDO ONLINE/CAJA (Valorar los diferentes aspectos del proceso de entrega del pedido de la tienda de 0 a 10)
 
-    -   Cumplimiento de los tiempos de entrega
-    -   Presentación /estado del paquete
-    -   Valoración de espera en caja
-    -   ¿El pedido se ha entregado correctamente al destinatario del mismo? (online)
-    -   ¿Qué deficiencia presentaba? (mala puntuación en presentación)
+    - Cumplimiento de los tiempos de entrega
+    - Presentación /estado del paquete
+    - Valoración de espera en caja
+    - ¿El pedido se ha entregado correctamente al destinatario del mismo? (online)
+    - ¿Qué deficiencia presentaba? (mala puntuación en presentación)
 
-10. EVALUACIÓN PROCESO DE PAGO, Valorar los diferentes aspectos del proceso de pago de la tienda
+10. EVALUACIÓN PROCESO DE PAGO (Valorar los diferentes aspectos del proceso de pago de la tienda)
 
-    -   Rapidez y sencillez en el proceso de pago
-    -   Formas de pago disponibles
-    -   Gastos de envío asociados a la entrega del pedido
+    - Rapidez y sencillez en el proceso de pago
+    - Formas de pago disponibles
+    - Gastos de envío asociados a la entrega del pedido
 
-11. EVALUACIÓN DEL PRODUCTO EN LA TIENDA. (Valora por favor los siguientes aspectos referidos a los productos de la tienda)
+11. EVALUACIÓN DEL PRODUCTO EN LA TIENDA (Valora por favor los siguientes aspectos referidos a los productos de la tienda de 0-10)
 
-    -   Presentación de los productos
-    -   Presentación de la descripción de los productos
-    -   Presentación de los detalles de los productos (largo, ancho, composición)
-    -   Disponibilidad de tallas
-    -   Calidad de los productos
-    -   Diseño de los productos
-    -   Precio de los productos
-    -   Promociones ofrecidas
+    - Presentación de los productos
+    - Presentación de la descripción de los productos
+    - Presentación de los detalles de los productos (largo, ancho, composición)
+    - Disponibilidad de tallas
+    - Calidad de los productos
+    - Diseño de los productos
+    - Precio de los productos
+    - Promociones ofrecidas
 
 12. PERFIL Y DATOS DE CLASIFICACIÓN BÁSICOS

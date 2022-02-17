@@ -13,6 +13,8 @@ editor_options:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+### (9) EVALUACIÓN ENTREGA PEDIDO ONLINE/CAJA
+
 El objetivo 09, nos llevaba a conocer la valoración de los diferentes aspectos del proceso de entrega del pedido en/de nuestra tienda.
 
 ```{r echo=FALSE, comment=NA}

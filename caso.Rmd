@@ -12,7 +12,7 @@ editor_options:
 # Introducción
 
 El presente trabajo se desarrolla con el objetivo de obtener las diferencias de percepción y satisfacción en el proceso de compra de la población de entre 16 y 65 años en las tiendas físicas u online en dos de las tres grandes cadenas nacionales de moda joven: TENDAM e INDITEX. Queda fuera del
-análisis por expreso deseo del *cliente final* el grupo MANGO.
+análisis por expreso deseo del *cliente final* el grupo MANGO y el grupo H&M.
 
 El análisis se repetirá 3 veces a lo largo de una temporada de negocio: Diciembre, Marzo y Julio. Se realiza un primer piloto del mismo a finales de octubre de 2021 y la primera ola a finales de noviembre y principios de diciembre de 2021, completándose (en el futuro) con una nueva oleada en marzo de 2022, a comparar con la primera ola de 2021.
 

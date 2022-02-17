@@ -13,6 +13,8 @@ editor_options:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+### (3) LIKES Y DISLIKES CERRADOS
+
 El tercer objetivo estaba relacionado con el conocimiento de **qué elementos caracterizadores de las tiendas físicas y online**, eran reveladores de las dos puntuaciones anteriores. Para ello, en primer lugar se obtiene **qué elementos han sido los más mencionados**, pero los distribuiremos en sentido positivo o sentido negativo, obteniendo la tasa para cada ítem valorado. Para esta clasificación, al igual se hizo en el instrumento de medición se cuestiones por los elementos que han favorecido esta valoración si la media de P1 y P2 era mayor que 6, o qué ha perjudicado si la media de valoración había sido menor o igual a 6.
 
 ```{r echo = FALSE}
@@ -20,10 +22,28 @@ data <- data %>% mutate(P1P2 = case_when((P1+P2)/2 > 6 ~ 1, (P1+P2)/2 <=6 ~ 2))
 val_lab(data$P1P2) <- c('Favorecen'=1, 'Perjudican'=2)
 var_lab(data$P1P2) <- 'Likes-Dislikes'
 
+tab <- data %>%
+    tab_total_row_position('none') %>%
+    tab_cols(total(), P1P2) %>%
+	tab_cells('|'=unvr(mrset_f(P3_))) %>%
+    tab_stat_cpct() %>%
+    tab_pivot(stat_position='inside_rows') %>%
+    drop_rc() %>%
+    tab_caption('Secciones en las que se fundamenta la satisfacción / recomendación (% columna)')
+as.datatable_widget(tab)
+tab <- data %>%
+    tab_total_row_position('none') %>%
+    tab_cols(total(), P1P2) %>%
+	tab_cells('|'=unvr(mrset_f(P3_))) %>%
+    tab_stat_rpct() %>% 
+    tab_pivot(stat_position='inside_rows') %>%
+    drop_rc() %>%
+    tab_caption('Secciones en las que se fundamenta la satisfacción / recomendación (% fila)')
+as.datatable_widget(tab)
 
 tab <- data %>%
     tab_total_row_position('none') %>%
-    tab_cols(total(), unvr(P1P2) %nest% unvr(R1C) %nest% unvr(R1D)) %>%
+    tab_cols(total(),  unvr(R1C) %nest% unvr(P1P2)) %>%
 	tab_cells('|'=unvr(mrset_f(P3_))) %>%
 	tab_stat_cases() %>%
     tab_pivot(stat_position='outside_rows') %>%
@@ -32,25 +52,88 @@ tab <- data %>%
 as.datatable_widget(tab)
 tab <- data %>%
     tab_total_row_position('none') %>%
-    tab_cols(total(), unvr(P1P2) %nest% unvr(R1C) %nest% unvr(R1D)) %>%
+    tab_cols(total(),  unvr(R1C) %nest% unvr(P1P2)) %>%
 	tab_cells('|'=unvr(mrset_f(P3_))) %>%
 	tab_stat_rpct() %>%
     tab_pivot(stat_position='outside_rows') %>%
     drop_rc() %>%
-    tab_caption('Secciones en las que se fundamenta la satisfacción / recomendación (porcentaje fila)')
+    tab_caption('Secciones en las que se fundamenta la satisfacción / recomendación (% fila)')
 as.datatable_widget(tab)
 tab <- data %>%
     tab_total_row_position('below') %>%
-    tab_cols(total(), unvr(P1P2) %nest% unvr(R1C) %nest% unvr(R1D)) %>%
+    tab_cols(total(),  unvr(R1C) %nest% unvr(P1P2)) %>%
 	tab_cells('|'=unvr(mrset_f(P3_))) %>%
 	tab_stat_cpct() %>%
     tab_pivot(stat_position='outside_rows') %>%
     drop_rc() %>%
-    tab_caption('Secciones en las que se fundamenta la satisfacción / recomendación (porcentaje columna)')
+    tab_caption('Secciones en las que se fundamenta la satisfacción / recomendación (% columna)')
+as.datatable_widget(tab)
+
+
+tab <- data %>%
+    tab_total_row_position('none') %>%
+    tab_subgroup(R1D == 1) %>% 
+    tab_cols(unvr(R1D) %nest% unvr(P1P2)) %>%
+	tab_cells('|'=unvr(mrset_f(P3_))) %>%
+	tab_stat_cases() %>%
+    tab_pivot(stat_position='outside_rows') %>%
+    drop_rc() %>%
+    tab_caption('Secciones en las que se fundamenta la satisfacción / recomendación (casos)')
+as.datatable_widget(tab)
+tab <- data %>%
+    tab_total_row_position('none') %>%
+    tab_subgroup(R1D == 1) %>% 
+    tab_cols(unvr(R1D) %nest% unvr(P1P2)) %>%
+	tab_cells('|'=unvr(mrset_f(P3_))) %>%
+	tab_stat_rpct() %>%
+    tab_pivot(stat_position='outside_rows') %>%
+    drop_rc() %>%
+    tab_caption('Secciones en las que se fundamenta la satisfacción / recomendación (% fila)')
+as.datatable_widget(tab)
+tab <- data %>%
+    tab_total_row_position('below') %>%
+    tab_subgroup(R1D == 1) %>% 
+    tab_cols(unvr(R1D) %nest% unvr(P1P2)) %>%
+	tab_cells('|'=unvr(mrset_f(P3_))) %>%
+	tab_stat_cpct() %>%
+    tab_pivot(stat_position='outside_rows') %>%
+    drop_rc() %>%
+    tab_caption('Secciones en las que se fundamenta la satisfacción / recomendación (% columna)')
+as.datatable_widget(tab)
+
+tab <- data %>%
+    tab_total_row_position('none') %>%
+    tab_subgroup(R1D == 2) %>% 
+    tab_cols(unvr(R1D) %nest% unvr(P1P2)) %>%
+	tab_cells('|'=unvr(mrset_f(P3_))) %>%
+	tab_stat_cases() %>%
+    tab_pivot(stat_position='outside_rows') %>%
+    drop_rc() %>%
+    tab_caption('Secciones en las que se fundamenta la satisfacción / recomendación (casos)')
+as.datatable_widget(tab)
+tab <- data %>%
+    tab_total_row_position('none') %>%
+    tab_subgroup(R1D == 2) %>% 
+    tab_cols(unvr(R1D) %nest% unvr(P1P2)) %>%
+	tab_cells('|'=unvr(mrset_f(P3_))) %>%
+	tab_stat_rpct() %>%
+    tab_pivot(stat_position='outside_rows') %>%
+    drop_rc() %>%
+    tab_caption('Secciones en las que se fundamenta la satisfacción / recomendación (% fila)')
+as.datatable_widget(tab)
+tab <- data %>%
+    tab_total_row_position('below') %>%
+    tab_subgroup(R1D == 2) %>% 
+    tab_cols(unvr(R1D) %nest% unvr(P1P2)) %>%
+	tab_cells('|'=unvr(mrset_f(P3_))) %>%
+	tab_stat_cpct() %>%
+    tab_pivot(stat_position='outside_rows') %>%
+    drop_rc() %>%
+    tab_caption('Secciones en las que se fundamenta la satisfacción / recomendación (% columna)')
 as.datatable_widget(tab)
 ```
 
-Analizamos ahora qué factores mencionan en cada cadena o canal los perfiles que favorecen y los perfiles que perjudican.
+Mostramos gráficamente ahora, qué factores mencionan en cada cadena o canal los perfiles que favorecen y los perfiles que perjudican.
 
 Para el grupo TENDAM ...
 

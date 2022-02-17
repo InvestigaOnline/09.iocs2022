@@ -13,6 +13,8 @@ editor_options:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+### (1) SATISFACCIÓN CON MARCA / TIENDA
+
 El primer objetivo estaba relacionado con la satisfacción declarada con el proceso de compra. Primera pregunta del instrumento de medición, tras el *screening* tratando de eliminar sesgo que el propio instrumento de medición pudiera introducir al ser administrado. La medición del objeto *satisfacción* se realiza con una escala de 0 a 10, donde el 0 era muy insatisfecho y el 10 muy satisfecho.
 
 ```{r echo = FALSE}

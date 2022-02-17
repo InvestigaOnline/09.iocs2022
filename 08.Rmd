@@ -13,6 +13,8 @@ editor_options:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+### (8) EVALUACIÓN DE LA ATENCIÓN AL CLIENTE
+
 El objetivo 08 hacía referencia a la evaluación de la atención al cliente tanto en el entorno web como en el entorno físico.
 
 ```{r echo = FALSE}

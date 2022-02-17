@@ -13,6 +13,8 @@ editor_options:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+### (7) USO DE PROBADORES (F)
+
 El objetivo 7 hacía referencia al uso de los probadores en las tiendas físicas de la marca analizada.
 
 ```{r echo = FALSE}

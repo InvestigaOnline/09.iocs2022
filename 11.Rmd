@@ -13,6 +13,8 @@ editor_options:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+### (11) EVALUACIÓN DEL PRODUCTO EN LA TIENDA
+
 El objetivo 11, nos llevaba a conocer la valoración de los diferentes aspectos del la presencia de los productos en la tienda.
 
 ```{r echo = FALSE}

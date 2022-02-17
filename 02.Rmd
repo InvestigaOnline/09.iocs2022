@@ -13,6 +13,8 @@ editor_options:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+### (2) RECOMENDACIÓN
+
 El objetivo 02 estaba relacionado con la posibilidad de recomendar la tienda física u online tras haber cumplido con el proceso de la compra. Se utilizaba para ello una escala de recomendación donde el 0 era "no recomendaría" la tienda a familiares / amigos y 10 implicaba seguridad en la recomendación.
 
 ```{r echo = FALSE}

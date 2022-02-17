@@ -13,6 +13,8 @@ editor_options:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+### (5) VALORACIÓN DEL SERVICIO RECIBIDO
+
 El objetivo 05 evaluaba el *gap de servicio* recibido, así como una solicitud de valoración del mismo. Procedemos de la misma forma que en los
 objetivos anteriores.
 

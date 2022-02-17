@@ -13,6 +13,8 @@ editor_options:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+### (6) VALORACIÓN DE LA TIENDA (ONLINE [W], FÍSICA  [F])
+
 El objetivo 06 estaba relacionado con la impresión que causó la tienda física u online de cada una de las marcas de los grupos indicados. Fueron
 utilizados diferentes ítems con una escala de 0 (muy mala impresión) a 10 (muy buena impresión). Mostramos los resultados más significativos.
 
