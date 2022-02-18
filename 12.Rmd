@@ -44,9 +44,9 @@ dist01 <- dist(data01[,-1])
 #calculo clusters
 clusters <- hclust(dist01, method = "ward.D")
 res.wardD2<-NbClust(data01, distance = "euclidean", min.nc = 2, max.nc = 5, method = "ward.D", index = "alllong")
-res.wardD2$All.index
-res.wardD2$Best.nc
-res.wardD2$Best.partition
+#res.wardD2$All.index
+#res.wardD2$Best.nc
+#res.wardD2$Best.partition
 ```
 
 ## Creación de variables de grupo
@@ -77,8 +77,14 @@ grupos=3
 #cluster kmeans
 set.seed(311265)
 kclusterCut.03 <- kmeans(data01[,-1], grupos, nstart = 10)
-kclusterCut.03
 ```
+#### Tamaño de los grupos
+
+`r kclusterCut.03[["size"]]`
+
+#### Centros finales de los grupos
+
+`r kclusterCut.03[["centers"]]`
 
 ### Creación de las variables de grupo
 
