@@ -97,3 +97,29 @@ tab <- data %>%
     tab_caption('Perfil * Valoración del proceso de entrega del pedido')
 as.datatable_widget(tab)
 ```
+
+Por otro lado, para aquellos consumidores online, se realizaban tres cuestiones referentes 
+que afectaban a la forma en que se había entregado el pedido.
+
+```{r echo = FALSE}
+var_lab(data$P15A) <- 'Entrega a destinatario correcto'
+var_lab(data$P15B) <- 'Solicitud de entrega cuando destinatario no es posible'
+var_lab(data$P15C) <- 'Condiciones del paquete a la entrega'
+
+tab <- data %>%
+    tab_cols(total(), R1D) %>%
+    tab_cells(P15A, P15B, P15C) %>%
+    tab_stat_cpct() %>%
+	tab_pivot() %>% 
+    tab_caption('Perfil * Proceso de entrega del pedido')
+as.datatable_widget(tab)
+
+```
+
+Verbatim de respuesta acerca de las condiciones de entrega:
+
+```{r}
+vbt <- filter(select(data, Caso = REGISTRO, Literal = P15C1), data$P15C == 2)
+kbl(vbt) %>% kable_styling(vbt, bootstrap_options = c('basic', 'condensed'))
+```
+
