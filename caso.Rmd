@@ -26,3 +26,7 @@ Para el piloto, se ha utilizado una muestra de conveniencia de estudiantes de m�
 
 Tanto para el dashboard como para el análisis de datos se ha utilizado R software. El informe es entregado en formato HTML. Para las pruebas inferenciales se ha utilizado la prueba Chi<sup>2</sup> y la prueba t para medias en muestras independientes con el objeto de detectar las posibles diferencias entre los perfiles detectados en la investigación a partir de las preguntas SEXO, EDAD, CANAL y CADENA. Los gráficos son exportables como
 imagen.
+
+# Propuesta de investigación
+
+<iframe src="https://docs.google.com/document/d/e/2PACX-1vR5yaWTStnjZ9XvYtjXyXU5gYHMZm-2t2C3-bx_Vzw0Whr76bBO7BLjeoWE6RwC7LTTis1pHqgMiezc/pub?embedded=true" width=10124 height='9300'></iframe>
