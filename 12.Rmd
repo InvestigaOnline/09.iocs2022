@@ -56,40 +56,40 @@ res.wardD2<-NbClust(data01, distance = "euclidean", min.nc = 2, max.nc = 5, meth
 Retenemos una variable con la pertenencia a cada grupo (2).
 
 ```{r}
-clusterCut.03 <- cutree(clusters, 3)
+clusterCut <- cutree(clusters, 2)
 ```
 
 Procedemos a unir las variables con el fichero original.
 
 ```{r}
-data02 <- cbind(REGISTRO=data01[,1],clusterCut.03)
+data02 <- cbind(REGISTRO=data01[,1],clusterCut)
 ```
 
 # Clúster K-medias
 
-## Cálculo - Solución 3 grupos
+## Cálculo - Solución 2 grupos
 
 
-Hacemos el análisis K-means para 3 grupos.
+Hacemos el análisis K-means para 2 grupos.
 
 ```{r}
-grupos=3
+grupos=2
 #cluster kmeans
 set.seed(311265)
-kclusterCut.03 <- kmeans(data01[,-1], grupos, nstart = 10)
+kclusterCut <- kmeans(data01[,-1], grupos, nstart = 10)
 ```
 #### Tamaño de los grupos
 
-`r kclusterCut.03[["size"]]`
+`r kclusterCut[["size"]]`
 
 #### Centros finales de los grupos
 
-`r kclusterCut.03[["centers"]]`
+`r kclusterCut[["centers"]]`
 
 ### Creación de las variables de grupo
 
 ```{r}
-grps <- kclusterCut.03[["cluster"]]
+grps <- kclusterCut[["cluster"]]
 ```
 
 Procedemos a unir las variables de pertenencia del K-means con el fichero original.
@@ -143,7 +143,7 @@ as.datatable_widget(datafinal %>%
 as.datatable_widget(datafinal %>% 
     tab_cells(R3REC) %>% 
     tab_cols(grps) %>% 
-    tab_stat_cpct() %>% 
+    tab_stat_cases() %>% 
     tab_last_sig_cases() %>% 
     tab_pivot())
 ```
@@ -186,16 +186,16 @@ as.datatable_widget(datafinal %>%
 ```{r echo=FALSE}
 library(factoextra)
 fviz_nbclust(data01, kmeans, method = "wss") +
-geom_vline(xintercept = 3, linetype = 2)
+geom_vline(xintercept = 2, linetype = 2)
 ```
 ```{r}
 set.seed(311265)
-km.res <- kmeans(data01[,-1], 3, nstart = 25)
+km.res <- kmeans(data01[,-1], 2, nstart = 25)
 km.res
 fviz_cluster(km.res, data = data01[,-1],
     palette = c("#2E9FDF", "#00AFBB", "#E7B800", "#FC4E07"),
     ellipse.type = "euclid", # Concentration ellipse
     star.plot = TRUE, # Add segments from centroids to items
-    repel = FALSE) # Avoid label overplotting (slow)
+    repel = TRUE) # Avoid label overplotting (slow)
 ```
 
