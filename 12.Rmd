@@ -6,7 +6,7 @@ output:
     number_sections: yes
     df_print: kable
 editor_options: 
-  chunk_output_type: inline
+  chunk_output_type: console
 ---
 
 ### OTROS ANÁLISIS
@@ -49,25 +49,9 @@ res.wardD2<-NbClust(data01, distance = "euclidean", min.nc = 2, max.nc = 5, meth
 #res.wardD2$Best.partition
 ```
 
-## Creación de variables de grupo
-
-### Solución de 3 grupos
-
-Retenemos una variable con la pertenencia a cada grupo (2).
-
-```{r}
-clusterCut <- cutree(clusters, 2)
-```
-
-Procedemos a unir las variables con el fichero original.
-
-```{r}
-data02 <- cbind(REGISTRO=data01[,1],clusterCut)
-```
-
 # Clúster K-medias
 
-## Cálculo - Solución 2 grupos
+### Cálculo - Solución 2 grupos
 
 
 Hacemos el análisis K-means para 2 grupos.
@@ -96,8 +80,54 @@ Procedemos a unir las variables de pertenencia del K-means con el fichero origin
 
 ```{r}
 data03 <- cbind(data01[,1], grps)
-colnames(data02) <- c('REGISTRO', 'grps')
-datafinal <- merge(data, data02, by = "REGISTRO")
+datafinal <- merge(data, data03, by = "REGISTRO")
+```
+
+### Caracterización de grupos, contraste t medias en muestra independientes
+
+```{r}
+datafinal = apply_labels(datafinal, grps = "Grupo" )
+as.datatable_widget(datafinal %>% 
+    tab_cells(P1,P2,P4, P5B, P17_1,P17_4,P17_5,P17_6,P17_7,P17_8) %>% 
+    tab_cols(grps) %>% 
+    tab_stat_mean_sd_n() %>% 
+    tab_last_sig_means() %>% 
+    tab_pivot()) 
+  
+```
+
+# Clúster K-medias
+
+### Cálculo - Solución 4 grupos
+
+
+Hacemos el análisis K-means para4 grupos.
+
+```{r}
+grupos=4
+#cluster kmeans
+set.seed(311265)
+kclusterCut <- kmeans(data01[,-1], grupos, nstart = 10)
+```
+
+#### Tamaño de los grupos
+
+`r kclusterCut[["size"]]`
+
+#### Centros finales de los grupos
+
+`r kclusterCut[["centers"]]`
+
+### Creación de las variables de grupo
+
+```{r}
+grps <- kclusterCut[["cluster"]]
+```
+
+Procedemos a unir las variables de pertenencia del K-means con el fichero original.
+
+```{r}
+data03 <- cbind(data01[,1], grps)
 datafinal <- merge(data, data03, by = "REGISTRO")
 ```
 
@@ -186,11 +216,11 @@ as.datatable_widget(datafinal %>%
 ```{r echo=FALSE}
 library(factoextra)
 fviz_nbclust(data01, kmeans, method = "wss") +
-geom_vline(xintercept = 2, linetype = 2)
+geom_vline(xintercept = 4, linetype = 2)
 ```
 ```{r}
 set.seed(311265)
-km.res <- kmeans(data01[,-1], 2, nstart = 25)
+km.res <- kmeans(data01[,-1], 4, nstart = 25)
 km.res
 fviz_cluster(km.res, data = data01[,-1],
     palette = c("#2E9FDF", "#00AFBB", "#E7B800", "#FC4E07"),
