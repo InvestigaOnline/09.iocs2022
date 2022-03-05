@@ -1,8 +1,12 @@
 ---
-title: "Proyecto"
+title: 'Evolución del proyecto'
 output: 
-  flexdashboard::flex_dashboard:
-    vertical_layout: fill
+  html_document: 
+    theme: flatly
+    number_sections: no
+    df_print: kable
+editor_options: 
+  chunk_output_type: inline
 ---
 
 ```{r echo = FALSE}
@@ -48,7 +52,7 @@ gtasa1 <- highchart() %>%
     hc_pane(startAngle = -90,endAngle = 90,background = list(outerRadius = '100%',innerRadius = '60%',shape = 'arc')) %>%
     hc_tooltip(enabled = FALSE) %>%
     hc_yAxis(lineWidth = 0,minorTickWidth = 0,tickAmount = 2,min = 0,max = 100,labels = list(y = 25)) %>%
-    hc_add_series(round(100*(xx/xn),1),dataLabels = list(borderWidth = 0,useHTML = TRUE,style = list(fontSize = '2rem'))) %>%
+    hc_add_series(round(100*(xx/xn),1),dataLabels = list(borderWidth = 0,useHTML = TRUE,format='{point.y:.1f} %',style = list(fontSize = '2rem'))) %>%
     hc_credits(enabled = TRUE,text = 'InvestigaOnline.com',href = 'https://www.investigaonline.com') %>%
     hc_exporting(enabled = TRUE) %>%
     hc_plotOptions(series = list(animation = FALSE))
@@ -59,7 +63,7 @@ gtasa2 <- highchart() %>%
     hc_pane(startAngle = -90,endAngle = 90,background = list(outerRadius = '100%',innerRadius = '60%',shape = 'arc')) %>%
     hc_tooltip(enabled = FALSE) %>%
     hc_yAxis(lineWidth = 0,minorTickWidth = 0,tickAmount = 2,min = 0,max = 100,labels = list(y = 25)) %>%
-    hc_add_series(round(100*(xy/xn),1),dataLabels = list(borderWidth = 0,useHTML = TRUE,style = list(fontSize = '2rem'))) %>%
+    hc_add_series(round(100*(xy/xn),1),dataLabels = list(borderWidth = 0,useHTML = TRUE,format='{point.y:.1f} %',style = list(fontSize = '2rem'))) %>%
     hc_credits(enabled = TRUE,text = 'InvestigaOnline.com',href = 'https://www.investigaonline.com') %>%
     hc_exporting(enabled = TRUE) %>%
     hc_plotOptions(series = list(animation = FALSE))
@@ -71,7 +75,7 @@ gtasa3 <- highchart() %>%
     hc_pane(startAngle = -90,endAngle = 90,background = list(outerRadius = '100%',innerRadius = '60%',shape = 'arc')) %>%
     hc_tooltip(enabled = FALSE) %>%
     hc_yAxis(lineWidth = 0,minorTickWidth = 0,tickAmount = 2,min = 0,max = 100,labels = list(y = 25)) %>%
-    hc_add_series(round(100*(xz/xn),1),dataLabels = list(borderWidth = 0,useHTML = TRUE,style = list(fontSize = '2rem'))) %>%
+    hc_add_series(round(100*(xz/xn),1),dataLabels = list(borderWidth = 0,useHTML = TRUE,format='{point.y:.1f} %',style = list(fontSize = '2rem'))) %>%
     hc_credits(enabled = TRUE,text = 'InvestigaOnline.com',href = 'https://www.investigaonline.com') %>%
     hc_exporting(enabled = TRUE) %>%
     hc_plotOptions(series = list(animation = FALSE))
@@ -129,57 +133,40 @@ gcanal <- hchart(dfcanal, 'bar', hcaes(x=canal, y=entrevistas)) %>%
     hc_plotOptions(series = list(animation = FALSE))
 ```
 
-# Datos
+## Datos
 
-## Column
+### Timeline del proyecto
 
-### Muestra
+`r timeline`
 
-`r valueBox(xn, caption = 'muestra diseñada', icon = 'fa-users', color = '#80bdff')`
+### Muestra: `r xn` entrevistas
 
-### Contactos
+### Contactos `r xw`
 
-`r valueBox(xw, caption = 'contactos', icon = 'fa-user-circle-o', color = '#b6babe')`
+### Entrevistas acabadas `r xx`
 
-### Entrevistas acabadas
+### Parciales `r xy`  entrevistas
 
-`r valueBox(xx, caption = 'finalizadas', icon = 'fa-check-circle', color = '#8bd1dc')`
+### Rechazadas `r xz`  entrevistas
 
-### Parciales
+### Duración `r duracion` minutos
 
-`r valueBox(xy, caption = 'parciales', icon = 'fa-calendar-o', color = '#f5b2ac')`
-
-### Rechazadas
-
-`r valueBox(xz, caption = 'rechazadas', icon = 'fa-ban', color = '#ffe083')`
-
-### Duración
-
-`r valueBox(duracion, caption = 'duracion minutos', icon = 'fa-clock', color = '#ffaa04')`
-
-## Column
-
-### **Completas**
+### Tasa de **Completas**
 
 `r gtasa1`
 
-### **Parciales**
+### Tasa de **Parciales**
 
 `r gtasa2`
 
-### **Rechazadas**
+### Tasa de **Rechazadas**
 
 `r gtasa3`
-
-## Column
 
 ### **Nº de Entrevistas día**
 
 `r dia`
 
-### Timeline del proyecto
-
-`r timeline`
 
 ```{r echo=FALSE}
 set.seed(311265)
