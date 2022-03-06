@@ -3,7 +3,7 @@ title: 'Perfil del target'
 output: 
   html_document: 
     theme: flatly
-    number_sections: yes
+    number_sections: no
     df_print: kable
 editor_options: 
   chunk_output_type: console
@@ -274,3 +274,28 @@ highchart() %>%
     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
     hc_exporting(enabled=TRUE)
 ```
+
+Por canal (online / física) y en cada grupo, la cantidad de valoraciones fueron ...
+
+```{r echo = FALSE}
+tab <- data %>%
+    tab_cols(R1D) %>% 
+	tab_cells(R1C) %>%
+	tab_stat_rpct(label='% casos') %>%
+	tab_stat_cases(label='casos') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Perfil:','Canal', sep = '')) 
+
+as.datatable_widget(tab)
+tab <- as.data.frame(tab)
+highchart() %>%
+    hc_title(text = 'Canal / Grupo') %>% 
+    hc_subtitle(text = '') %>% 
+    hc_xAxis(categories = tab$row_labels) %>%
+    hc_add_series(tab[-3,], 'bar', hcaes(x=row_labels, y=tab[-3,2]),name = "online") %>%
+    hc_add_series(tab[-3,], 'bar', hcaes(x=row_labels, y=tab[-3,4]),name = "física") %>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+
+```
+

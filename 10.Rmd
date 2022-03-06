@@ -3,7 +3,7 @@ title: "Resultados (10)"
 output: 
   html_document: 
     theme: flatly
-    number_sections: yes
+    number_sections: no
     df_print: kable
 editor_options: 
   chunk_output_type: console
