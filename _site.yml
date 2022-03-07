@@ -42,8 +42,6 @@ navbar:
         href: 10.html
       - text: "Objetivo 11"
         href: 11.html
-      - text: "Otros análisis"
-        href: 12.html
       - text: "Conclusiones"
         href: 13.html
   right:
